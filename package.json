@@ -1,0 +1,32 @@
+{
+  "name": "clara-versen",
+  "description": "Your fully local AI Superstack - Privacy-First, On-Premises, Limitless",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.12.2"
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "web:dev": "pnpm --filter clara-versen dev",
+    "desktop:dev": "pnpm --filter clara-versen tauri dev",
+    "android:dev": "pnpm --filter clara-versen tauri android dev"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.14.1",
+    "@builder.io/qwik-city": "^1.14.1",
+    "@eslint/js": "^9.30.1",
+    "@tauri-apps/cli": "^2.6.2",
+    "@types/node": "^22.16.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-qwik": "^1.14.1",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "undici": "^7.11.0",
+    "vite": "^5.4.19",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
