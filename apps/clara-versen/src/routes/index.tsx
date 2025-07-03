@@ -1,33 +1,24 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { useLocalStorage } from "qwik-localstorage";
+import { ClaraAssistant } from "~/components/clara-assistant/clara-assistant";
 
+// from https://github.com/badboysm890/ClaraVerse/blob/main/src/App.tsx
 export default component$(() => {
-  return (
-    <>
-      <h1>Clara VerseN</h1>
-      <p>
-        This project started a hardfork of the awesome Clara Verse. Why you want
-        to use Clara VerseN? Because the tech stack based on modern and
-        lightweight technologies ...
-      </p>
-      <h2>Tech Stack</h2>
-      <ol>
-        <li>
-          <a href="https://tauri.app/">Tauri</a> instead of heavy electron -
-          more secure using the system web engine and rust
-        </li>
-        <li>
-          <a href="https://qwik.dev/">Qwik</a> web framework instead of React
-          javascript framework - secure because less javascript and npm packages
-          to maintain
-        </li>
-        <li>
-          Uses the latest <a href="http://nodejs.org/">Nodejs</a> LTS version at
-          leased to ensure that all security updates are included
-        </li>
-      </ol>
-    </>
+  const { data: activePage, set: setActivePage } = useLocalStorage<string>(
+    "page",
+    "dashboard",
   );
+
+  console.debug(
+    "Clara VerseN is a hardfork of the awesome Clara Verse. Why you want to use Clara VerseN? Because the tech stack based on modern and lightweight technologies: Tauri, Qwik, NodeJS LTS, DaisyUI",
+  );
+
+  useVisibleTask$(() => {
+    console.debug("activePage", activePage.value);
+  });
+
+  return <ClaraAssistant onPageChange={setActivePage} />;
 });
 
 export const head: DocumentHead = {

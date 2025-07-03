@@ -95,3 +95,8 @@
   /* --color-base-content: oklch(0% 0 0); */
   /* --root-bg: var(--color-base-100); */
 }
+
+/* handles address-control or virtual keyboard on mobile */
+.min-dvh-screen {
+  min-height: 100dvh;
+}

@@ -44,6 +44,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.6.13
         version: 0.6.13(prettier@3.6.2)
+      qwik-localstorage:
+        specifier: ^1.2.0
+        version: 1.2.0
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
@@ -1849,6 +1852,10 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  qwik-localstorage@1.2.0:
+    resolution: {integrity: sha512-QdJH6SAHJc0CrmW+Ts7UQetKx45TgMpjX3aKMo6ZqFmdWmtD6tcM24IkJtD9Nqq+evOWiV2NTHAolCjc8Lf8kQ==}
+    engines: {node: '>=15.0.0'}
 
   recma-build-jsx@1.0.0:
     resolution: {integrity: sha512-8GtdyqaBcDfva+GUKDr3nev3VpKAhup1+RvkMvUxURHpW7QyIvk9F5wz7Vzo06CEMSilw6uArgRqhpiUcWp8ew==}
@@ -4158,6 +4165,8 @@ snapshots:
   punycode@2.3.1: {}
 
   queue-microtask@1.2.3: {}
+
+  qwik-localstorage@1.2.0: {}
 
   recma-build-jsx@1.0.0:
     dependencies:
