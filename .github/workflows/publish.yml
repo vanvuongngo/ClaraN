@@ -26,6 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-25.04' # This must match the platform value defined above.
         run: |
