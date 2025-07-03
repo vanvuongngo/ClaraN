@@ -31,7 +31,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Clara VerseN",
+  title: "Clara VerseN - AI Assistant",
   meta: [
     {
       name: "description",

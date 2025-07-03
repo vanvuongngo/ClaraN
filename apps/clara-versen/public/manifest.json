@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
-  "short_name": "Welcome to Qwik",
+  "name": "Clara VerseN",
+  "short_name": "Clara VerseN",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A Qwik project app."
+  "description": "Clara VerseN is a hardfork of the awesome Clara Verse with modern tech stack and mobile first"
 }
