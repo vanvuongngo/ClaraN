@@ -1,7 +1,7 @@
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { useLocalStorage } from "qwik-localstorage";
-import { ClaraAssistant } from "~/components/clara-assistant/clara-assistant";
+import { ClaraAssistant } from "~/components/ClaraAssistant";
 
 // from https://github.com/badboysm890/ClaraVerse/blob/main/src/App.tsx
 export default component$(() => {
