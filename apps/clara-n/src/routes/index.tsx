@@ -11,9 +11,10 @@ export default component$(() => {
   );
 
   console.debug(
-    "Clara VerseN is a hardfork of the awesome Clara Verse. Why you want to use Clara VerseN? Because the tech stack based on modern and lightweight technologies: Tauri, Qwik, NodeJS LTS, DaisyUI",
+    "ClaraN is a hardfork of the awesome Clara. Why you want to use ClaraN? Because the tech stack based on modern and lightweight technologies: Tauri, Qwik, NodeJS LTS, DaisyUI",
   );
 
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     console.debug("activePage", activePage.value);
   });
@@ -22,12 +23,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Clara VerseN - AI Assistant",
+  title: "ClaraN - AI Assistant",
   meta: [
     {
       name: "description",
       content:
-        "Clara VerseN is a hardfork of the awesome Clara Verse with modern tech stack and mobile first",
+        "ClaraN is a hardfork of the awesome Clara with modern tech stack and mobile first",
     },
   ],
 };

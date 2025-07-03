@@ -1,5 +1,5 @@
 {
-  "name": "clara-versen",
+  "name": "clara-n",
   "description": "Your fully local AI Superstack - Privacy-First, On-Premises, Limitless",
   "engines": {
     "node": ">=22.0.0",
@@ -9,9 +9,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter clara-versen dev",
-    "desktop:dev": "pnpm --filter clara-versen tauri dev",
-    "android:dev": "pnpm --filter clara-versen tauri android dev"
+    "dev": "pnpm --filter clara-n dev",
+    "desktop:dev": "pnpm --filter clara-n tauri dev",
+    "android:dev": "pnpm --filter clara-n tauri android dev"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.14.1",

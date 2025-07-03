@@ -1,8 +1,8 @@
-# ClaraVerseN
+# ClaraN
 
 **Your fully local AI Superstack - Privacy-First, On-Premises, Limitless**
 
-ClaraVerseN isn't just another chat UI. It's a complete AI ecosystem that runs 100% on your machines.
+ClaraN isn't just another chat UI. It's a complete AI ecosystem that runs 100% on your machines.
 
 This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVerse
 
@@ -30,7 +30,7 @@ pnpm dev
 
 ### Desktop app
 ```sh
-pnpm dev
+pnpm desktop:dev
 ```
 
 ### Android mobile app
@@ -46,7 +46,7 @@ pnpm ios:dev
 ```
 
 ## 📜 License
-ClaraVerseN is open-source software licensed under the MIT License. This means you can:
+ClaraN is open-source software licensed under the MIT License. This means you can:
 
 - ✅ Use it commercially
 - ✅ Modify and distribute

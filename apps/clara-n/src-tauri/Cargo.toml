@@ -1,10 +1,10 @@
 [package]
-name = "app"
+name = "ClaraN"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+description = "Your fully local AI Superstack - Privacy-First, On-Premises, Limitless"
+authors = ["Van Vuong Ngo"]
+license = "MIT"
+repository = "https://github.com/vanvuongngo/ClaraN.git"
 edition = "2021"
 rust-version = "1.77.2"
 

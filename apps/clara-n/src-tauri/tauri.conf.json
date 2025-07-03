@@ -1,8 +1,8 @@
 {
   "$schema": "../../../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "Clara VerseN",
+  "productName": "ClaraN",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "ch.devn.dev",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Clara VerseN",
+        "title": "ClaraN - AI Assistent",
         "width": 800,
         "height": 600,
         "resizable": true,

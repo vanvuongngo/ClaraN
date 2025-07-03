@@ -1,5 +1,5 @@
 {
-  "name": "clara-versen",
+  "name": "clara-n",
   "description": "Your fully local AI Superstack - Privacy-First, On-Premises, Limitless",
   "engines": {
     "node": ">=22.0.0",
@@ -22,6 +22,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "tauri": "tauri"
   }
 }
