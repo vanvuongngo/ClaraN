@@ -11,6 +11,9 @@
 
   /* example for a new variable */
   /* --color-primary-muted: green; */
+
+  /* --default-font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" */
+  --default-font-family: ui-sans-serif,system-ui,sans-serif
 }
 
 /* when customize then set default also for lofi
