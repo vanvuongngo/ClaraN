@@ -8,7 +8,8 @@ interface ClaraAssistantProps {
 
 // from https://github.com/badboysm890/ClaraVerse/blob/main/src/components/ClaraAssistant.tsx
 export const ClaraAssistant = component$<ClaraAssistantProps>(
-  ({ onPageChange }) => {
+  // ({ onPageChange }) => {
+  () => {
     return (
       <>
         <aside

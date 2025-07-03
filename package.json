@@ -11,7 +11,11 @@
   "scripts": {
     "dev": "pnpm --filter clara-n dev",
     "desktop:dev": "pnpm --filter clara-n tauri dev",
-    "android:dev": "pnpm --filter clara-n tauri android dev"
+    "android:dev": "pnpm --filter clara-n tauri android dev",
+    "ios:dev": "pnpm --filter clara-n tauri ios dev",
+    "build": "pnpm --filter clara-n tauri build",
+    "build.macos": "pnpm --filter clara-n tauri build --bundles app", 
+    "build.dmg": "pnpm --filter clara-n tauri build --bundles dmg"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.14.1",
