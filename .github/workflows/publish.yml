@@ -52,6 +52,7 @@ jobs:
           version: 10
           run_install: false
 
+      # https://github.com/actions/setup-node
       - name: setup node
         uses: actions/setup-node@v4
         with:
@@ -140,17 +141,20 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - args: "--target aarch64-apple-darwin"
-            arch: "silicon"
+          # - args: "--target aarch64-apple-darwin"
+          #   arch: "silicon"
+          # platform: macos-latest
           - args: "--target x86_64-apple-darwin"
             arch: "intel"
-          - platform: "ubuntu-latest"
-            args: ""
-          - platform: "windows-latest"
-            args: ""
+            platform: macos-latest
+          # - platform: "ubuntu-latest"
+          #   args: ""
+          # - platform: "windows-latest"
+          #   args: ""
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - uses: tauri-apps/tauri-action@v0
         env:
