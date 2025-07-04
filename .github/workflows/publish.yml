@@ -128,7 +128,7 @@ jobs:
         run: pnpm i # change this to npm or pnpm depending on which one you use.
 
   release-tauri:
-    needs: [uild-macos, build-ubuntu_windows]
+    needs: [build-macos, build-ubuntu_windows]
     permissions:
       contents: write
     strategy:
