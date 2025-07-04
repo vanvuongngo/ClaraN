@@ -11,9 +11,9 @@ jobs:
       matrix:
         include:
           # - args: "--target aarch64-apple-darwin"
-          #   arch: "silicon"
+          #   arch: "arm64"
           - args: "--target x86_64-apple-darwin"
-            arch: "intel"
+            arch: "x64"
     runs-on: macos-latest
     environment: dev
     env:
@@ -50,6 +50,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          architecture: ${{ matrix.arch }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
