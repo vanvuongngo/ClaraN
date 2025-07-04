@@ -76,13 +76,19 @@ jobs:
         with:
           workspaces: "./apps/clara-n/src-tauri -> target"
 
-      - uses: tauri-apps/tauri-action@v0
+      - name: Tauri build
+        uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
+          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
+          releaseName: "App v__VERSION__"
+          releaseBody: "See the assets to download this version and install."
+          releaseDraft: true
+          prerelease: false
           args: ${{ matrix.args }}
 
   # build-ubuntu_windows:
@@ -126,43 +132,43 @@ jobs:
   #     - name: Rust cache
   #       uses: swatinem/rust-cache@v2
   #       with:
-  #         workspaces: "./apps/clara-n/src-tauri -> target"
+  # #         workspaces: "./apps/clara-n/src-tauri -> target"
 
-  #     - name: install frontend dependencies
-  #       # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-  #       run: pnpm i
+  # #     - name: install frontend dependencies
+  # #       # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
+  # #       run: pnpm i
 
-  release-tauri:
-    # needs: [build-macos, build-ubuntu_windows]
-    needs: [build-macos]
-    permissions:
-      contents: write
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          # - args: "--target aarch64-apple-darwin"
-          #   arch: "silicon"
-          # platform: macos-latest
-          - args: "--target x86_64-apple-darwin"
-            arch: "intel"
-            platform: macos-latest
-          # - platform: "ubuntu-latest"
-          #   args: ""
-          # - platform: "windows-latest"
-          #   args: ""
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  # release-tauri:
+  #   # needs: [build-macos, build-ubuntu_windows]
+  #   needs: [build-macos]
+  #   permissions:
+  #     contents: write
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       include:
+  #         # - args: "--target aarch64-apple-darwin"
+  #         #   arch: "silicon"
+  #         # platform: macos-latest
+  #         - args: "--target x86_64-apple-darwin"
+  #           arch: "intel"
+  #           platform: macos-latest
+  #         # - platform: "ubuntu-latest"
+  #         #   args: ""
+  #         # - platform: "windows-latest"
+  #         #   args: ""
+  #   runs-on: ${{ matrix.platform }}
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-      - uses: tauri-apps/tauri-action@v0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: "App v__VERSION__"
-          releaseBody: "See the assets to download this version and install."
-          releaseDraft: true
-          prerelease: false
-          args: ${{ matrix.args }}
+  #     - uses: tauri-apps/tauri-action@v0
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
+  #         releaseName: "App v__VERSION__"
+  #         releaseBody: "See the assets to download this version and install."
+  #         releaseDraft: true
+  #         prerelease: false
+  #         args: ${{ matrix.args }}
