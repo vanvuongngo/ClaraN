@@ -40,7 +40,8 @@ jobs:
           CERT_ID=$(echo "$CERT_INFO" | awk -F'"' '{print $2}')
           echo "CERT_ID=$CERT_ID" >> $GITHUB_ENV
           echo "Certificate imported."
-            - name: Install pnpm
+
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10
