@@ -11,9 +11,9 @@ jobs:
       matrix:
         include:
           # - args: "--target aarch64-apple-darwin"
-          #   arch: "arm64"
+          #   arch: "silicon"
           - args: "--target x86_64-apple-darwin"
-            arch: "x64"
+            arch: "intel"
     runs-on: macos-latest
     environment: dev
     env:
