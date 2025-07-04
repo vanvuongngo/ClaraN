@@ -10,8 +10,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - args: "--target aarch64-apple-darwin"
-            arch: "silicon"
+          # - args: "--target aarch64-apple-darwin"
+          #   arch: "silicon"
           - args: "--target x86_64-apple-darwin"
             arch: "intel"
     runs-on: macos-latest
@@ -51,7 +51,6 @@ jobs:
         with:
           node-version: lts/*
           cache: "pnpm"
-          cache-dependency-path: pnpm-lock.yaml
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
