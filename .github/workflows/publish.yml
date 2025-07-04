@@ -19,8 +19,7 @@ jobs:
           - args: "--target x86_64-apple-darwin"
             arch: "x64"
             platform: macos-latest
-          - platform: "debian-latest"
-          # - platform: "ubuntu-latest"
+          - platform: "ubuntu-latest"
           - platform: "windows-latest"
     runs-on: ${{ matrix.platform }}
     environment: dev
