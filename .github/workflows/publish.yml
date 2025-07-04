@@ -50,7 +50,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          architecture: ${{ matrix.arch }}
+          architecture: "x64"
+          #${{ matrix.arch }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
