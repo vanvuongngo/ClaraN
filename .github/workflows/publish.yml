@@ -12,9 +12,11 @@ jobs:
         include:
           # - args: "--target aarch64-apple-darwin"
           #   arch: "silicon"
+          # platform: macos-latest
           - args: "--target x86_64-apple-darwin"
             arch: "intel"
-    runs-on: macos-latest
+            platform: macos-latest
+    runs-on: ${{ matrix.platform }}
     environment: dev
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
