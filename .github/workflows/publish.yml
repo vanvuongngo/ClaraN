@@ -12,11 +12,11 @@ jobs:
     strategy:
       matrix:
         include:
-          # - args: "--target aarch64-apple-darwin"
-          #   arch: "silicon"
-          # platform: macos-latest
+          - args: "--target aarch64-apple-darwin"
+            arch: "arm64"
+            platform: macos-latest
           - args: "--target x86_64-apple-darwin"
-            arch: "intel"
+            arch: "x64"
             platform: macos-latest
     runs-on: ${{ matrix.platform }}
     environment: dev
@@ -59,8 +59,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          architecture: "x64"
-          #${{ matrix.arch }}
+          architecture: ${{ matrix.arch }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
@@ -78,7 +77,7 @@ jobs:
         with:
           workspaces: "./apps/clara-n/src-tauri -> target"
 
-      - name: Build Tauri
+      - name: Build Tauri and add to release
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
