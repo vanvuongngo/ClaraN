@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-macos:
-    needs: prepare
     strategy:
       matrix:
         include:
@@ -129,6 +128,7 @@ jobs:
         run: pnpm i # change this to npm or pnpm depending on which one you use.
 
   release-tauri:
+    needs: [uild-macos, build-ubuntu_windows]
     permissions:
       contents: write
     strategy:
