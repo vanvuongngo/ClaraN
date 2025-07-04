@@ -11,10 +11,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - args: '--target aarch64-apple-darwin'
-            arch: 'silicon'
-          - args: '--target x86_64-apple-darwin'
-            arch: 'intel'
+          - args: "--target aarch64-apple-darwin"
+            arch: "silicon"
+          - args: "--target x86_64-apple-darwin"
+            arch: "intel"
     runs-on: macos-latest
     env:
       APPLE_ID: ${{ secrets.APPLE_ID }}
@@ -117,7 +117,7 @@ jobs:
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
-  
+
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
@@ -127,23 +127,25 @@ jobs:
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: pnpm i # change this to npm or pnpm depending on which one you use.
 
-  release:
+  release-tauri:
     permissions:
       contents: write
     strategy:
       fail-fast: false
       matrix:
         include:
-          - args: '--target aarch64-apple-darwin'
-            arch: 'silicon'
-          - args: '--target x86_64-apple-darwin'
-            arch: 'intel'
+          - args: "--target aarch64-apple-darwin"
+            arch: "silicon"
+          - args: "--target x86_64-apple-darwin"
+            arch: "intel"
           - platform: "ubuntu-latest"
             args: ""
           - platform: "windows-latest"
             args: ""
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v4
+
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
