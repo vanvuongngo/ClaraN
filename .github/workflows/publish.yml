@@ -7,6 +7,8 @@ on:
 
 jobs:
   build-macos:
+    permissions:
+      contents: write
     strategy:
       matrix:
         include:
@@ -53,7 +55,7 @@ jobs:
           run_install: false
 
       # https://github.com/actions/setup-node
-      - name: setup node
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
@@ -65,7 +67,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: install Rust stable
+      - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
@@ -76,7 +78,7 @@ jobs:
         with:
           workspaces: "./apps/clara-n/src-tauri -> target"
 
-      - name: Tauri build
+      - name: Build Tauri
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
