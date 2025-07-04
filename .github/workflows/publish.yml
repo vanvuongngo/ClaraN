@@ -26,21 +26,13 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
-          echo "l1"
           echo $APPLE_CERTIFICATE | base64 --decode > certificate.p12
-          echo "l2"
           security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
-          echo "l3"
           security default-keychain -s build.keychain
-          echo "l4"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
-          echo "l5"
           security set-keychain-settings -t 3600 -u build.keychain
-          echo "l6"
           security import certificate.p12 -k build.keychain -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
-          echo "l7"
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" build.keychain
-          echo "l8"
           security find-identity -v -p codesigning build.keychain
       - name: Verify Certificate
         run: |
@@ -54,17 +46,12 @@ jobs:
         with:
           version: 10
 
-      - name: install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
-
       - name: setup node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: "pnpm"
+          cache-dependency-path: ${{ matrix.arch }}
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
@@ -79,7 +66,7 @@ jobs:
 
       - name: install frontend dependencies
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-        run: pnpm i # change this to npm or pnpm depending on which one you use.
+        run: pnpm i
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -134,7 +121,7 @@ jobs:
 
       - name: install frontend dependencies
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-        run: pnpm i # change this to npm or pnpm depending on which one you use.
+        run: pnpm i
 
   release-tauri:
     needs: [build-macos, build-ubuntu_windows]
@@ -159,9 +146,6 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
-          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
-          APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "App v__VERSION__"
