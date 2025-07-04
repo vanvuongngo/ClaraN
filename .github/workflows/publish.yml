@@ -6,10 +6,11 @@ on:
       - "v*"
 
 jobs:
-  build-macos:
+  publish:
     permissions:
       contents: write
     strategy:
+      fail-fast: false
       matrix:
         include:
           - args: "--target aarch64-apple-darwin"
@@ -18,6 +19,10 @@ jobs:
           - args: "--target x86_64-apple-darwin"
             arch: "x64"
             platform: macos-latest
+          - platform: "ubuntu-latest"
+            args: ""
+          - platform: "windows-latest"
+            args: ""
     runs-on: ${{ matrix.platform }}
     environment: dev
     env:
@@ -25,6 +30,7 @@ jobs:
       APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
     steps:
       - name: Import Apple Developer Certificate
+        if: matrix.platform == 'macos-latest'
         env:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
@@ -39,6 +45,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" build.keychain
           security find-identity -v -p codesigning build.keychain
       - name: Verify Certificate
+        if: matrix.platform == 'macos-latest'
         run: |
           CERT_INFO=$(security find-identity -v -p codesigning build.keychain | grep "Apple Development")
           CERT_ID=$(echo "$CERT_INFO" | awk -F'"' '{print $2}')
@@ -54,12 +61,18 @@ jobs:
           version: 10
           run_install: false
 
+      - name: install dependencies (ubuntu only)
+        if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
       # https://github.com/actions/setup-node
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          architecture: ${{ matrix.arch }}
+          architecture: ${{ matrix.arch || '' }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
@@ -86,90 +99,8 @@ jobs:
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: "App v__VERSION__"
+          releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
-
-  # build-ubuntu_windows:
-  #   permissions:
-  #     contents: write
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       include:
-  #         - platform: "ubuntu-latest"
-  #           args: ""
-  #         - platform: "windows-latest"
-  #           args: ""
-  #   runs-on: ${{ matrix.platform }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - name: Install pnpm
-  #       uses: pnpm/action-setup@v4
-  #       with:
-  #         version: 10
-
-  #     - name: install dependencies (ubuntu only)
-  #       if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
-  #       run: |
-  #         sudo apt-get update
-  #         sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
-
-  #     - name: setup node
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: lts/*
-  #         cache: "pnpm"
-
-  #     - name: install Rust stable
-  #       uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
-  #       with:
-  #         # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
-  #         targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
-
-  #     - name: Rust cache
-  #       uses: swatinem/rust-cache@v2
-  #       with:
-  # #         workspaces: "./apps/clara-n/src-tauri -> target"
-
-  # #     - name: install frontend dependencies
-  # #       # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-  # #       run: pnpm i
-
-  # release-tauri:
-  #   # needs: [build-macos, build-ubuntu_windows]
-  #   needs: [build-macos]
-  #   permissions:
-  #     contents: write
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       include:
-  #         # - args: "--target aarch64-apple-darwin"
-  #         #   arch: "silicon"
-  #         # platform: macos-latest
-  #         - args: "--target x86_64-apple-darwin"
-  #           arch: "intel"
-  #           platform: macos-latest
-  #         # - platform: "ubuntu-latest"
-  #         #   args: ""
-  #         # - platform: "windows-latest"
-  #         #   args: ""
-  #   runs-on: ${{ matrix.platform }}
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
-
-  #     - uses: tauri-apps/tauri-action@v0
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-  #         releaseName: "App v__VERSION__"
-  #         releaseBody: "See the assets to download this version and install."
-  #         releaseDraft: true
-  #         prerelease: false
-  #         args: ${{ matrix.args }}
