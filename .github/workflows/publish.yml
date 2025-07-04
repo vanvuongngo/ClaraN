@@ -53,7 +53,7 @@ jobs:
           architecture: "x64"
           #${{ matrix.arch }}
           cache: "pnpm"
-          cache-dependency-path: pnpm-lock.yaml
+          # cache-dependency-path: pnpm-lock.yaml
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
@@ -78,55 +78,56 @@ jobs:
         with:
           args: ${{ matrix.args }}
 
-  build-ubuntu_windows:
-    permissions:
-      contents: write
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - platform: "ubuntu-latest"
-            args: ""
-          - platform: "windows-latest"
-            args: ""
-    runs-on: ${{ matrix.platform }}
-    steps:
-      - uses: actions/checkout@v4
+  # build-ubuntu_windows:
+  #   permissions:
+  #     contents: write
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       include:
+  #         - platform: "ubuntu-latest"
+  #           args: ""
+  #         - platform: "windows-latest"
+  #           args: ""
+  #   runs-on: ${{ matrix.platform }}
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
+  #     - name: Install pnpm
+  #       uses: pnpm/action-setup@v4
+  #       with:
+  #         version: 10
 
-      - name: install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+  #     - name: install dependencies (ubuntu only)
+  #       if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
+  #       run: |
+  #         sudo apt-get update
+  #         sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - name: setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: "pnpm"
+  #     - name: setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         cache: "pnpm"
 
-      - name: install Rust stable
-        uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
-        with:
-          # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
-          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+  #     - name: install Rust stable
+  #       uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
+  #       with:
+  #         # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
+  #         targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
-      - name: Rust cache
-        uses: swatinem/rust-cache@v2
-        with:
-          workspaces: "./apps/clara-n/src-tauri -> target"
+  #     - name: Rust cache
+  #       uses: swatinem/rust-cache@v2
+  #       with:
+  #         workspaces: "./apps/clara-n/src-tauri -> target"
 
-      - name: install frontend dependencies
-        # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
-        run: pnpm i
+  #     - name: install frontend dependencies
+  #       # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
+  #       run: pnpm i
 
   release-tauri:
-    needs: [build-macos, build-ubuntu_windows]
+    # needs: [build-macos, build-ubuntu_windows]
+    needs: [build-macos]
     permissions:
       contents: write
     strategy:
