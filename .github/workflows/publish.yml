@@ -19,10 +19,9 @@ jobs:
           - args: "--target x86_64-apple-darwin"
             arch: "x64"
             platform: macos-latest
-          - platform: "ubuntu-latest"
-            args: ""
+          - platform: "debian-latest"
+          # - platform: "ubuntu-latest"
           - platform: "windows-latest"
-            args: ""
     runs-on: ${{ matrix.platform }}
     environment: dev
     env:
@@ -103,4 +102,4 @@ jobs:
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: false
-          args: ${{ matrix.args }}
+          args: ${{ matrix.args || '' }}
