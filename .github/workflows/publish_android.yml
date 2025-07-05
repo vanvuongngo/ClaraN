@@ -22,10 +22,10 @@ jobs:
           ANDROID_KEY_BASE64: ${{ secrets.ANDROID_KEY_BASE64 }}
         run: |
           cd apps/clara-n/src-tauri/gen/android
-          echo "keyAlias=${{ $ANDROID_KEY_ALIAS }}" > keystore.properties
-          echo "password=${{ $ANDROID_KEY_PASSWORD }}" >> keystore.properties
-          base64 -d <<< "${{ $ANDROID_KEY_BASE64 }}" > $RUNNER_TEMP/keystore.jks
-          echo "storeFile=$RUNNER_TEMP/keystore.jks" >> keystore.properties
+          echo "keyAlias=${ANDROID_KEY_ALIAS}" > keystore.properties
+          echo "password=${$ANDROID_KEY_PASSWORD}" >> keystore.properties
+          base64 -d <<< $ANDROID_KEY_BASE64 > $RUNNER_TEMP/keystore.jks
+          echo "storeFile=${RUNNER_TEMP}/keystore.jks" >> keystore.properties
 
       # https://github.com/actions/setup-java
       - name: Setup JDK
