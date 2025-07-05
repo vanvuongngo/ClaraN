@@ -12,6 +12,7 @@
     "dev": "pnpm --filter clara-n dev",
     "desktop:dev": "pnpm --filter clara-n tauri dev",
     "android:dev": "pnpm --filter clara-n tauri android dev",
+    "android:build": "pnpm --filter clara-n tauri android build",
     "ios:dev": "pnpm --filter clara-n tauri ios dev",
     "build": "pnpm --filter clara-n tauri build",
     "build.macos": "pnpm --filter clara-n tauri build --bundles app", 

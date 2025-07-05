@@ -1,3 +1,3 @@
-package com.tauri.dev
+package ch.devn.dev
 
 class MainActivity : TauriActivity()

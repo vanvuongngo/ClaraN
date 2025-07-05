@@ -34,7 +34,7 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
-          echo $APPLE_CERTIFICATE | base64 --decode > certificate.p12
+          echo $APPLE_CERTIFICATE | base64 -d > certificate.p12
           security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
           security default-keychain -s build.keychain
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
@@ -88,6 +88,7 @@ jobs:
         with:
           workspaces: "./apps/clara-n/src-tauri -> target"
 
+      # https://github.com/tauri-apps/tauri-action
       - name: Build Tauri and add to release
         uses: tauri-apps/tauri-action@v0
         env:

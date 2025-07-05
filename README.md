@@ -25,6 +25,13 @@ This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVe
 | [Windows](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | x64-setup.exe, x64_en-US.msi |
 | [Ubuntu](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | amd64.AppImage, amd64.deb, x86_64.rpm |
 
+#### Troubleshooting
+
+AppImage on Ubuntu: ***AppImages require FUSE to run***
+```sh
+sudo apt-get install libfuse2
+```
+
 ### 📱 Mobile App
 
 | operation system | supported | bundle |
@@ -64,6 +71,20 @@ pnpm android:dev
 ```sh
 pnpm ios:dev
 ```
+
+## 🆚 **ClaraN vs The Competition**
+
+| Feature | **ClaraN** | **ClaraVerse** | OpenWebUI | LibreChat | Ollama WebUI |
+|---------|------------|----------------|-----------|-----------|--------------|
+| 💻 **100% Local Stack** | ✅ Complete | ✅ Complete | ✅ Yes | ✅ Yes | ✅ Basic |
+| 🧩 **Visual App Builder** | ❌ No | ✅ Built-in | ❌ No | ❌ No | ❌ No |
+| 🔄 **Native Automation** | ❌ No | ✅ N8N Integrated | ❌ No | ❌ No | ❌ No |
+| 🧠 **Agent Builder** | ❌ No | ✅ Visual Designer | ❌ No | ❌ No | ❌ No |
+| 🎨 **Image Generation** | ❌ No | ✅ ComfyUI | ✅ Basic DALL-E | ❌ No | ❌ No |
+| 🧱 **Widget System** | ❌ No | ✅ Dynamic Dashboard | ❌ No | ✅ Basic | ❌ No |
+| 🔧 **Code Execution** | ❌ No | ✅ OpenInterpreter | ❌ No | ❌ No | ❌ No |
+| 📱 **Mobile App** | ✅ Tauri | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
+| 🖥️ **Desktop App** | ✅ Tauri | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 
 
 ## 📜 License
