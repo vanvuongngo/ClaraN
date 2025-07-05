@@ -39,10 +39,11 @@ jobs:
         uses: android-actions/setup-android@v3
       - name: Set NDK_HOME environment
         run: |
-          major_version=28
-          SDK_MANAGER=$ANDROID_SDK_ROOT/cmdline-tools/latest/sdkmanager
-          ndk_version=$(${SDK_MANAGER} --list | grep "ndk;${major_version}.*" | awk '{gsub("ndk;", ""); print $1}' | sort -V | tail -n1)
-          echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/$ndk_version" >> $GITHUB_ENV
+          MAJOR_VERSION=28
+          SDK_MANAGER="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+          NDK_VERSION=$(${SDK_MANAGER} --list | grep "ndk;${MAJOR_VERSION}.*" | awk '{gsub("ndk;", ""); print $1}' | sort -V | tail -n1)
+          echo $NDK_VERSION
+          echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/$NDK_VERSION" >> $GITHUB_ENV
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
