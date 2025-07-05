@@ -39,9 +39,9 @@ jobs:
         uses: android-actions/setup-android@v3
       - name: set NDK_HOME environment
         run: |
-          ANDROID_NDK_MAJOR_LATEST=(${ANDROID_NDK_MAJOR_VERSIONS[-1]})
-          ndkLatestFullVersion=$(get_full_ndk_version $ANDROID_NDK_MAJOR_LATEST)
-          echo "ANDROID_NDK_LATEST_HOME=$ANDROID_SDK_ROOT/ndk/$ndkLatestFullVersion" | tee -a /etc/environment
+          major_version=28
+          ndk_version=$(${ANDROID_SDK_ROOT}/cmdline-tools/latest/sdkmanager --list | grep "ndk;${major_version}.*" | awk '{gsub("ndk;", ""); print $1}' | sort -V | tail -n1)
+          echo "ANDROID_NDK_LATEST_HOME=$ANDROID_SDK_ROOT/ndk/$ndk_version" | tee -a /etc/environment
           echo "$ANDROID_NDK_LATEST_HOME"
 
       - name: Install pnpm
