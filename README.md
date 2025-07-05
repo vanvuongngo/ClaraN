@@ -13,7 +13,27 @@ This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVe
 - [Nodejs](http://nodejs.org/) Javascript for tooling
 - [DaisyUI](http://daisyui.com/) for faster, cleaner and simple [tailwind CSS](https://tailwindcss.com/) UI development
 
-## Quick Start
+
+## Supported environments
+
+### 🖥️ Desktop App
+
+| operation system | supported | bundle |
+|---|---|---|
+| [MacOS](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | aarch64.dmg (aarch64.app.tar.gz), x64.dmg (x64.app.tar.gz) |
+| Apple Store | N/A | please [buy me a coffee](https://buymeacoffee.com/vuongngo) for an apple developer license $99 |
+| [Windows](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | x64-setup.exe, x64_en-US.msi |
+| [Ubuntu](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | amd64.AppImage, amd64.deb, x86_64.rpm |
+
+### 📱 Mobile App
+
+| operation system | supported | bundle |
+|---|---|---|
+| Android | :white_check_mark: | is planned |
+| iOS | :white_check_mark: | is planned |
+
+
+## 🛠️ Development Setup
 
 ```sh
 # Install once the global dependency
@@ -44,6 +64,7 @@ pnpm android:dev
 ```sh
 pnpm ios:dev
 ```
+
 
 ## 📜 License
 ClaraN is open-source software licensed under the MIT License. This means you can:
