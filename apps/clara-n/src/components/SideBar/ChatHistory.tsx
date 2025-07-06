@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const ChatHistory = component$(() => {
   return (
-    <div class="flex-1 overflow-y-auto">
+    <div class="flex-1">
       <ul class="menu">
         <li>
           <a class="active">erstelle ein meta description...</a>

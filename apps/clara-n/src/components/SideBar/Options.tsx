@@ -5,7 +5,9 @@ export const Options = component$(() => {
     <div class="border-base-content/20 space-y-1 border-t p-2">
       <ul class="menu">
         <li>
-          <a>⭐ Starred</a>
+          <a>
+            ⭐ <span class="peer-checked:hidden">Starred</span>
+          </a>
         </li>
         <li>
           <a>📦 Archived</a>

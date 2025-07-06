@@ -6,7 +6,8 @@ import { Header } from "./Header";
 export const MainChatArea = component$(() => {
   return (
     <>
-      <header class="navbar bg-base-300 px-4 shadow-sm">
+      {/* <header class="navbar bg-base-300 px-4 shadow-sm"> */}
+      <header class="bg-base-300 hidden items-center justify-between p-4 shadow lg:flex">
         <Header />
       </header>
 

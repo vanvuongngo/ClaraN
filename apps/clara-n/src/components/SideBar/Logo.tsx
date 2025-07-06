@@ -1,16 +1,22 @@
-import { component$, QRL } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
-export interface LogoProps {
-  toggleSidebar: QRL<() => void>;
-}
-
-export const Logo = component$<LogoProps>(({ toggleSidebar }) => {
+export const Logo = component$(() => {
   return (
-    <div class="flex items-center justify-between p-4">
-      <span class="text-xl font-bold">🧠 Clara</span>
-      <button class="btn btn-sm btn-ghost" onClick$={toggleSidebar}>
-        ⟨
-      </button>
-    </div>
+    <>
+      <div class="flex items-center justify-between p-4">
+        <input id="collapse-toggle" type="checkbox" class="drawer-toggle" />
+        <div class="text-xl font-bold">
+          🧠 <span class="peer-checked:hidden">ClaraN</span>
+        </div>
+
+        <label for="sidebar-toggle" class="btn btn-ghost btn-square">
+          ☰
+        </label>
+
+        <label for="collapse-toggle" class="btn btn-sm btn-ghost">
+          <span class="transition-transform peer-checked:rotate-180">⏴</span>
+        </label>
+      </div>
+    </>
   );
 });
