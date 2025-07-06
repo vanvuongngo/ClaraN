@@ -28,6 +28,7 @@ jobs:
         run: |
           TAG=${{ github.ref_name }}
           echo "RELEASE_VERSION=${TAG#v}" >> $GITHUB_ENV
+          git branch -a
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
