@@ -13,18 +13,9 @@ env:
   PNPM_VERSION: 10
   SRC_TAURI: "apps/clara-n/src-tauri"
   TAG: ${{ github.ref_name }}
-  RELEASE_VERSION: ${{ env.TAG#v }}
 
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo $TAG
-          echo $RELEASE_VERSION
-          exit 1
   versioning:
-    needs: debug
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -37,10 +28,11 @@ jobs:
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ env.TAG }}
         uses: maxgfr/github-change-json@main
         with:
           key: "version"
-          value: ${{ env.RELEASE_VERSION }}
+          value: ${VERSION#v}
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
 
@@ -170,8 +162,9 @@ jobs:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
+          VERSION: ${{ env.TAG }}
         with:
-          appVersion: ${{ env.RELEASE_VERSION }}
+          appVersion: ${TAG#v}
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
