@@ -87,7 +87,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: HEAD:refs/tags/${{ github.ref_name }}
+          ref: ${{ github.ref_name }}
 
       - name: debug
         run: |
