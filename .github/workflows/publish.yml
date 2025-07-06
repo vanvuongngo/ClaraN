@@ -24,11 +24,10 @@ jobs:
         uses: actions/checkout@v4
 
       # https://github.com/maxgfr/github-change-json
-      - name: Set App version
+      - name: Set release version
         run: |
           TAG=${{ github.ref_name }}
           echo "RELEASE_VERSION=${TAG#v}" >> $GITHUB_ENV
-          git branch -a
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -84,15 +83,16 @@ jobs:
           echo "CERT_ID=$CERT_ID" >> $GITHUB_ENV
           echo "Certificate imported."
 
+      - name: Set release version
+        run: |
+          TAG=${{ github.ref_name }}
+          echo "RELEASE_VERSION=${TAG#v}" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
-
-      - name: debug
-        run: |
-          git branch
-          cat ${{ env.SRC_TAURI }}/tauri.conf.json
 
       # Android
       - name: Setup Android signing
@@ -170,6 +170,7 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
+          appVersion: ${{ RELEASE_VERSION }}
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
