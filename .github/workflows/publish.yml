@@ -170,7 +170,7 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
-          appVersion: ${{ RELEASE_VERSION }}
+          appVersion: ${{ env.RELEASE_VERSION }}
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
