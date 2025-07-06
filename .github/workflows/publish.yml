@@ -15,6 +15,7 @@ env:
   TAG: ${{ github.ref_name }}
 
 jobs:
+  # tauri.conf.json
   versioning:
     permissions:
       contents: write
@@ -162,9 +163,7 @@ jobs:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
-          VERSION: ${{ env.TAG }}
         with:
-          appVersion: ${VERSION#v}
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
