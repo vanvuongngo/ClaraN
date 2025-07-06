@@ -86,11 +86,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: HEAD:refs/tags/v${{ env.RELEASE_VERSION }}
 
       - name: debug
         run: |
           git branch
-          git branch -a
           cat ${{ env.SRC_TAURI }}/tauri.conf.json
 
       # Android
