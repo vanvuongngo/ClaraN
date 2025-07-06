@@ -1,3 +1,4 @@
+# https://tauri.app/distribute/sign/android/
 name: "publish_android"
 
 on:
@@ -77,7 +78,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
-          targets: "aarch64-linux-android,armv7-linux-androideabi,i686-linux-android"
+          targets: "aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android"
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
