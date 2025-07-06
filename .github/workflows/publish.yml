@@ -31,7 +31,6 @@ jobs:
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_HEAD_REF: "master"
         uses: maxgfr/github-change-json@main
         with:
           key: "version"
