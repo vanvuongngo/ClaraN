@@ -68,10 +68,9 @@ jobs:
           # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
 
-      - name: output tauri.conf.json
-        run: |
-          cat ${{ env.SRC_TAURI }}/tauri.conf.json
-          exit 1
+      # - name: Debug tauri.conf.json
+      #   run: |
+      #     cat ${{ env.SRC_TAURI }}/tauri.conf.json
 
       - name: Import Apple Developer Certificate
         if: matrix.platform == 'macos-latest'
