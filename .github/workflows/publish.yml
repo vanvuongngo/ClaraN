@@ -72,6 +72,12 @@ jobs:
       #   run: |
       #     cat ${{ env.SRC_TAURI }}/tauri.conf.json
 
+      - name: Merge tag to master branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+
       - name: Import Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
         env:
@@ -189,21 +195,21 @@ jobs:
           gh release upload --clobber app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
 
   # https://github.com/ad-m/github-push-action
-  merge:
-    needs: publish
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          # required to get the new version from the versioning job
-          ref: ${{ github.ref_name }}
-      - name: Merge tag to master branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: $GITHUB_TOKEN
-          branch: ${{ github.head_ref }}
+  # merge:
+  #   needs: publish
+  #   permissions:
+  #     contents: write
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         # required to get the new version from the versioning job
+  #         ref: ${{ github.ref_name }}
+  #     - name: Merge tag to master branch
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       uses: ad-m/github-push-action@master
+  #       with:
+  #         github_token: $GITHUB_TOKEN
+  #         branch: ${{ github.head_ref }}
