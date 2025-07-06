@@ -13,7 +13,7 @@ env:
   PNPM_VERSION: 10
   SRC_TAURI: "apps/clara-n/src-tauri"
   TAG: ${{ github.ref_name }}
-  RELEASE_VERSION: ${env.TAG#v}
+  RELEASE_VERSION: ${{ env.TAG#v }}
 
 jobs:
   debug:
