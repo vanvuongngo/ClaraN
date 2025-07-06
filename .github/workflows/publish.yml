@@ -6,6 +6,7 @@ on:
       - "v*"
 
 env:
+  APP_VERSION: v0.1.1
   JAVA_DISTRIBUTION: "zulu"
   JAVA_VERSION: 17
   NDK_MAJOR_VERSION: 28
@@ -137,6 +138,7 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
         with:
+          appVersion: ${{ env.APP_VERSION }}
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
