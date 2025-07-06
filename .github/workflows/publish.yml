@@ -40,11 +40,13 @@ jobs:
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
 
+      # https://github.com/ad-m/github-push-action
       - name: Merge tag to master branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
+          force_with_lease: true
 
   publish:
     needs: versioning
