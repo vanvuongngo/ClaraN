@@ -38,6 +38,9 @@ jobs:
           value: ${{ env.RELEASE_VERSION }}
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
+      - name: merge to master
+        run: |
+          git push --set-upstream origin master
 
   publish:
     needs: versioning
