@@ -40,7 +40,9 @@ jobs:
           commit: true
       - name: merge to master
         run: |
-          git push --set-upstream origin master
+          git config --global user.name vanvuongngo
+          git config --global user.email vanvuongngo@users.noreply.github.com
+          git push -f -u origin master
 
   publish:
     needs: versioning
