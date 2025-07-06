@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --global user.name vanvuongngo
           git config --global user.email vanvuongngo@users.noreply.github.com
+          git checkout master
           git merge ${{ github.ref_name }} master && git push -u origin master
 
   publish:
