@@ -188,6 +188,7 @@ jobs:
           gh release upload --clobber app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
           gh release upload --clobber app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
 
+  # https://github.com/ad-m/github-push-action
   merge:
     needs: publish
     permissions:
