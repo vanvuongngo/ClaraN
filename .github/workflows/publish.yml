@@ -12,10 +12,9 @@ env:
   NODE_VERSION: "lts/*"
   PNPM_VERSION: 10
   SRC_TAURI: "apps/clara-n/src-tauri"
-  TAG: ${{ github.ref_name }}
 
 jobs:
-  # tauri.conf.json
+  # set TAG as version in tauri.conf.json
   versioning:
     permissions:
       contents: write
@@ -25,15 +24,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set release version
+        run: |
+          TAG=${{ github.ref_name }}
+          echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+
       # https://github.com/maxgfr/github-change-json
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ env.TAG }}
         uses: maxgfr/github-change-json@main
         with:
           key: "version"
-          value: ${VERSION#v}
+          value: ${{ env.VERSION }}
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
 
@@ -59,6 +62,9 @@ jobs:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
     steps:
+      - name: debug tauri.conf.json
+        run: |
+          cat ${{ env.SRC_TAURI }}/tauri.conf.json
       - name: Import Apple Developer Certificate
         if: matrix.platform == 'macos-latest'
         env:
