@@ -15,7 +15,25 @@ env:
   SRC_TAURI: "apps/clara-n/src-tauri"
 
 jobs:
+  versioning:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/maxgfr/github-change-json
+      - name: Set App version
+        run: |
+          RELEASE_VERSION=$(basename "$GITHUB_REF") >> $GITHUB_ENV
+      - name: Modify version of the tauri.conf.json
+        uses: maxgfr/github-change-json@main
+        with:
+          key: "version"
+          value: ${{ env.RELEASE_VERSION }}
+          path: ${{ env.SRC_TAURI }}/tauri.conf.json
+          commit: true
+
   publish:
+    needs: versioning
     permissions:
       contents: write
     strategy:
@@ -129,18 +147,6 @@ jobs:
         with:
           workspaces: "./${{ env.SRC_TAURI }} -> target"
 
-      # https://github.com/maxgfr/github-change-json
-      - name: Set App version
-        run: |
-          RELEASE_VERSION=$(basename "$GITHUB_REF") >> $GITHUB_ENV
-      - name: Modify version of the tauri.conf.json
-        uses: maxgfr/github-change-json@main
-        with:
-          key: "version"
-          value: ${{ env.RELEASE_VERSION }}
-          path: ${{ env.SRC_TAURI }}/tauri.conf.json
-          commit: true
-
       # https://github.com/tauri-apps/tauri-action
       - name: Build Tauri and add to release
         uses: tauri-apps/tauri-action@v0
@@ -158,3 +164,9 @@ jobs:
           prerelease: false
           args: ${{ matrix.args || '' }}
           tauriScript: ${{ matrix.platform == 'ubuntu-latest' && 'pnpm tauri android' || '' }}
+
+      - name: Add Android to release
+        if: matrix.platform == 'ubuntu-latest'
+        run: |
+          gh release upload ${{github.event.release.tag_name}} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
+          gh release upload ${{github.event.release.tag_name}} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
