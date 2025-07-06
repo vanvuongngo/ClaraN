@@ -20,9 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo $TAG
           echo $RELEASE_VERSION
           exit 1
   versioning:
+    needs: debug
     permissions:
       contents: write
     runs-on: ubuntu-latest
