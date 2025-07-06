@@ -25,7 +25,9 @@ jobs:
       # https://github.com/maxgfr/github-change-json
       - name: Set App version
         run: |
-          echo "RELEASE_VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+          TAG=${{ github.ref_name }}
+          echo "tag: $TAG, ${TAG#v}"
+          echo "RELEASE_VERSION=${TAG#v}" >> $GITHUB_ENV
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -170,6 +172,8 @@ jobs:
 
       - name: Add Android to release
         if: matrix.platform == 'ubuntu-latest'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload ${{github.event.release.tag_name}} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
-          gh release upload ${{github.event.release.tag_name}} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
+          gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
+          gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
