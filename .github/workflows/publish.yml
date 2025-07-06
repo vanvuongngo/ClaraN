@@ -179,13 +179,14 @@ jobs:
           args: ${{ matrix.args || '' }}
           tauriScript: ${{ matrix.platform == 'ubuntu-latest' && 'pnpm tauri android' || '' }}
 
+      # https://cli.github.com/manual/gh_release_upload
       - name: Add Android to release (Android)
         if: matrix.platform == 'ubuntu-latest'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
-          gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
+          gh release upload --clobber app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
+          gh release upload --clobber app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
 
   merge:
     needs: publish
@@ -204,4 +205,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: $GITHUB_TOKEN
-          branch: master
+          branch: ${{ github.head_ref }}

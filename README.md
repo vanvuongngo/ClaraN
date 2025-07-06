@@ -36,7 +36,7 @@ sudo apt-get install libfuse2
 
 | operation system | supported | bundle |
 |---|---|---|
-| Android | :white_check_mark: | is planned |
+| [Android](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | apk, aab |
 | iOS | :white_check_mark: | is planned |
 
 
