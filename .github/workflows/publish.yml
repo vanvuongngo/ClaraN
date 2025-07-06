@@ -5,6 +5,14 @@ on:
     tags:
       - "v*"
 
+env:
+  JAVA_DISTRIBUTION: "zulu"
+  JAVA_VERSION: 17
+  NDK_MAJOR_VERSION: 28
+  NODE_VERSION: "lts/*"
+  PNPM_VERSION: 10
+  SRC_TAURI: "apps/clara-n/src-tauri"
+
 jobs:
   publish:
     permissions:
@@ -61,7 +69,7 @@ jobs:
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
           ANDROID_KEY_BASE64: ${{ secrets.ANDROID_KEY_BASE64 }}
         run: |
-          cd apps/clara-n/src-tauri/gen/android
+          cd ${{ env.SRC_TAURI }}/gen/android
           echo "keyAlias=$ANDROID_KEY_ALIAS" > keystore.properties
           echo "password=$ANDROID_KEY_PASSWORD" >> keystore.properties
           base64 -d <<< "$ANDROID_KEY_BASE64" > $RUNNER_TEMP/keystore.jks
@@ -71,8 +79,8 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         uses: actions/setup-java@v4
         with:
-          distribution: "zulu"
-          java-version: "17"
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
       # https://github.com/android-actions/setup-android
       - name: Setup Android SDK
         if: matrix.platform == 'ubuntu-latest'
@@ -80,7 +88,7 @@ jobs:
       - name: Set NDK_HOME environment
         if: matrix.platform == 'ubuntu-latest'
         run: |
-          MAJOR_VERSION=28
+          MAJOR_VERSION=${{ env.NDK_MAJOR_VERSION }}
           SDK_MANAGER="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
           NDK_VERSION=$(${SDK_MANAGER} --list | grep "ndk;${MAJOR_VERSION}.*" | awk '{gsub("ndk;", ""); print $1}' | sort -V | tail -n1)
           echo "NDK_HOME=$ANDROID_SDK_ROOT/ndk/$NDK_VERSION" >> $GITHUB_ENV
@@ -88,7 +96,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
 
       - name: Install dependencies (ubuntu only)
@@ -101,12 +109,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: ${{ NODE_VERSION }}
           architecture: ${{ matrix.arch || '' }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: pnpm i
 
       - name: Install Rust stable
@@ -118,7 +126,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: "./apps/clara-n/src-tauri -> target"
+          workspaces: "./${{ env.SRC_TAURI }} -> target"
 
       # https://github.com/tauri-apps/tauri-action
       - name: Build Tauri and add to release
