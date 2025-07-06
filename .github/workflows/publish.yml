@@ -62,9 +62,17 @@ jobs:
       APPLE_ID: ${{ secrets.APPLE_ID }}
       APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
     steps:
-      - name: debug tauri.conf.json
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # required to get the new version from the versioning job
+          ref: ${{ github.ref_name }}
+
+      - name: output tauri.conf.json
         run: |
           cat ${{ env.SRC_TAURI }}/tauri.conf.json
+          exit 1
+
       - name: Import Apple Developer Certificate
         if: matrix.platform == 'macos-latest'
         env:
@@ -87,12 +95,6 @@ jobs:
           CERT_ID=$(echo "$CERT_INFO" | awk -F'"' '{print $2}')
           echo "CERT_ID=$CERT_ID" >> $GITHUB_ENV
           echo "Certificate imported."
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          # required to get the new version from the versioning job
-          ref: ${{ github.ref_name }}
 
       # Android
       - name: Setup Android signing
