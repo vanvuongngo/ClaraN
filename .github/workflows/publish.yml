@@ -15,7 +15,7 @@ env:
 
 jobs:
   # set TAG as version in tauri.conf.json
-  versioning:
+  version:
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -40,16 +40,28 @@ jobs:
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
 
+  merge:
+    needs: version
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # required to get the new version from the versioning job
+          ref: ${{ github.ref_name }}
+
       # https://github.com/ad-m/github-push-action
       - name: Merge tag to master branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: HEAD:master
-          force_with_lease: true
+          force: true
 
   publish:
-    needs: versioning
+    needs: merge
     permissions:
       contents: write
     strategy:
