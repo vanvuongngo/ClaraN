@@ -1,9 +1,0 @@
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-# https://www.schemastore.org/dependabot-2.0.json
-
-version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
