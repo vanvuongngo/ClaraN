@@ -19,14 +19,16 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      # https://github.com/actions/checkout
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: "master"
 
       # https://github.com/maxgfr/github-change-json
       - name: Set App version
         run: |
           TAG=${{ github.ref_name }}
-          echo "tag: $TAG, ${TAG#v}"
           echo "RELEASE_VERSION=${TAG#v}" >> $GITHUB_ENV
       - name: Modify version of the tauri.conf.json
         env:
