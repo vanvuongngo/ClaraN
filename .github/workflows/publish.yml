@@ -40,6 +40,12 @@ jobs:
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
 
+      - name: Merge tag to master branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+
   publish:
     needs: versioning
     permissions:
@@ -71,12 +77,6 @@ jobs:
       # - name: Debug tauri.conf.json
       #   run: |
       #     cat ${{ env.SRC_TAURI }}/tauri.conf.json
-
-      - name: Merge tag to master branch
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
 
       - name: Import Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
