@@ -38,12 +38,6 @@ jobs:
           value: ${{ env.RELEASE_VERSION }}
           path: ${{ env.SRC_TAURI }}/tauri.conf.json
           commit: true
-      - name: merge to master
-        run: |
-          git config --global user.name vanvuongngo
-          git config --global user.email vanvuongngo@users.noreply.github.com
-          git checkout master
-          git merge ${{ github.ref_name }} master && git push -u origin master
 
   publish:
     needs: versioning
@@ -92,6 +86,10 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: debug
+        run: |
+          cat ${{ SRC_TAURI }}}/tauri.conf.json
 
       # Android
       - name: Setup Android signing
