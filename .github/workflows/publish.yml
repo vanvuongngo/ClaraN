@@ -22,8 +22,6 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: "master"
 
       # https://github.com/maxgfr/github-change-json
       - name: Set App version
@@ -33,6 +31,7 @@ jobs:
       - name: Modify version of the tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_HEAD_REF: "master"
         uses: maxgfr/github-change-json@main
         with:
           key: "version"
