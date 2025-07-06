@@ -1,6 +1,6 @@
 [package]
 name = "ClaraN"
-version = "0.1.1"
+version = "0.0.0"
 description = "Your fully local AI Superstack - Privacy-First, On-Premises, Limitless"
 authors = ["Van Vuong Ngo"]
 license = "MIT"
