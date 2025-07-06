@@ -28,11 +28,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
+          SRC_TAURI: ${{ env.SRC_TAURI }}
         uses: maxgfr/github-change-json@main
         with:
           key: "version"
-          value: "${{ RELEASE_VERSION }}"
-          path: ${{ env.SRC_TAURI }}/tauri.conf.json
+          value: "$RELEASE_VERSION"
+          path: $SRC_TAURI/tauri.conf.json
           commit: true
 
   publish:
