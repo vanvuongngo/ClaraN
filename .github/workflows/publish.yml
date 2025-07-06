@@ -89,7 +89,7 @@ jobs:
 
       - name: debug
         run: |
-          cat ${{ SRC_TAURI }}}/tauri.conf.json
+          cat ${{ env.SRC_TAURI }}}/tauri.conf.json
 
       # Android
       - name: Setup Android signing
