@@ -22,7 +22,7 @@ jobs:
       # https://github.com/maxgfr/github-change-json
       - name: Set App version
         run: |
-          RELEASE_VERSION=${{ GITHUB_REF_NAME }} >> $GITHUB_ENV
+          RELEASE_VERSION="${GITHUB_REF}" >> $GITHUB_ENV
           echo "RELEASE_VERSION: $RELEASE_VERSION"
       - name: Modify version of the tauri.conf.json
         env:
