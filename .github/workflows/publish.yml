@@ -24,13 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set release version
+      - name: Get tag name as release version
         run: |
           TAG=${{ github.ref_name }}
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
 
       # https://github.com/maxgfr/github-change-json
-      - name: Modify version of the tauri.conf.json
+      - name: Set new tag name as version in tauri.conf.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: maxgfr/github-change-json@main
@@ -72,7 +72,7 @@ jobs:
       #   run: |
       #     cat ${{ env.SRC_TAURI }}/tauri.conf.json
 
-      - name: Import Apple Developer Certificate
+      - name: Import Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
         env:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
@@ -87,7 +87,7 @@ jobs:
           security import certificate.p12 -k build.keychain -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" build.keychain
           security find-identity -v -p codesigning build.keychain
-      - name: Verify Certificate
+      - name: Verify Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
         run: |
           CERT_INFO=$(security find-identity -v -p codesigning build.keychain | grep "Apple Development")
@@ -96,7 +96,7 @@ jobs:
           echo "Certificate imported."
 
       # Android
-      - name: Setup Android signing
+      - name: Setup Android signing (Android)
         if: matrix.platform == 'ubuntu-latest'
         env:
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
@@ -109,17 +109,17 @@ jobs:
           base64 -d <<< "$ANDROID_KEY_BASE64" > $RUNNER_TEMP/keystore.jks
           echo "storeFile=${RUNNER_TEMP}/keystore.jks" >> keystore.properties
       # https://github.com/actions/setup-java
-      - name: Setup JDK
+      - name: Setup JDK (Android)
         if: matrix.platform == 'ubuntu-latest'
         uses: actions/setup-java@v4
         with:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
       # https://github.com/android-actions/setup-android
-      - name: Setup Android SDK
+      - name: Setup Android SDK (Android)
         if: matrix.platform == 'ubuntu-latest'
         uses: android-actions/setup-android@v3
-      - name: Set NDK_HOME environment
+      - name: Set NDK_HOME environment (Android)
         if: matrix.platform == 'ubuntu-latest'
         run: |
           MAJOR_VERSION=${{ env.NDK_MAJOR_VERSION }}
@@ -133,14 +133,14 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
           run_install: false
 
-      - name: Install dependencies (ubuntu only)
+      - name: Install dependencies (ubuntu)
         if: matrix.platform == 'ubuntu-latest' # This must match the platform value defined above.
         run: |
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
       # https://github.com/actions/setup-node
-      - name: Setup node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -179,10 +179,29 @@ jobs:
           args: ${{ matrix.args || '' }}
           tauriScript: ${{ matrix.platform == 'ubuntu-latest' && 'pnpm tauri android' || '' }}
 
-      - name: Add Android to release
+      - name: Add Android to release (Android)
         if: matrix.platform == 'ubuntu-latest'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk
           gh release upload app-${{ github.ref_name }} ${{ env.SRC_TAURI }}/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab
+
+  merge:
+    needs: publish
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # required to get the new version from the versioning job
+          ref: ${{ github.ref_name }}
+      - name: Merge tag to master branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: $GITHUB_TOKEN
+          branch: master
