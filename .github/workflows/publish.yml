@@ -109,7 +109,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ NODE_VERSION }}
+          node-version: ${{ env.NODE_VERSION }}
           architecture: ${{ matrix.arch || '' }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
