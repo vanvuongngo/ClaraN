@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D2442972DA829EF3F99DE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF4C7D709FAE81BAD3F4C7A /* Assets.xcassets */; };
+		4425827A519B6EFF659F6330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531D92ABF46A8C544F78F8EF /* LaunchScreen.storyboard */; };
+		676E3215338A2DDF19E6155E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 396701A3933A6D475F5E6A9A /* main.mm */; };
+		7E6AB1E0ED6FB3114BB54A7F /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3256DC9198247A04E9C7CE98 /* libapp.a */; };
+		8A7D56748587C285869A521B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A96B5970DE071FA5E842D11 /* QuartzCore.framework */; };
+		A8AE96DD1FD43D13F14EA8D4 /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = 8885D696EA7D0635F554B3DE /* libapp.a */; };
+		BAFA90FFB5EF12CABF36E8A9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB483C78F8A6B13771DFFE4 /* assets */; };
+		BC083D187835B5D8F8D38BB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E73FADE1D774BAEB19CDF7 /* Security.framework */; };
+		BC154D2806958548B45E8020 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3C4F3F3C029FD81DC8003 /* Metal.framework */; };
+		C2E6C8AEDD2593CEDA0FF56E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3A21EB549D89978258DCCC /* CoreGraphics.framework */; };
+		EBCD3AB9ED9F2FEA820774A9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05CDDE1E27A8779C1DB77C0 /* WebKit.framework */; };
+		F12D4022C352B860AEAFE973 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658703DF2C17C55F2D1E8C46 /* MetalKit.framework */; };
+		F7BA9314789704352FD82838 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C943B23C8F84511AE7639F /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14A3C4F3F3C029FD81DC8003 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		2FD661945C5E1DAEA6494818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3256DC9198247A04E9C7CE98 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		396701A3933A6D475F5E6A9A /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		405C84AD2271D346C1380692 /* ClaraN_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ClaraN_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		531D92ABF46A8C544F78F8EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5912D3DB844E3465803BB826 /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		5DB483C78F8A6B13771DFFE4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		658703DF2C17C55F2D1E8C46 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		6A3A21EB549D89978258DCCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8006E4AE34E1B6E0E5824B29 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		8885D696EA7D0635F554B3DE /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		8A96B5970DE071FA5E842D11 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BBF4C7D709FAE81BAD3F4C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD3C02AE708F9BC41346AEE9 /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		C1D6B808C5F655F57689E2B6 /* ClaraN_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClaraN_iOS.entitlements; sourceTree = "<group>"; };
+		C1E73FADE1D774BAEB19CDF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D4C943B23C8F84511AE7639F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E05CDDE1E27A8779C1DB77C0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F1E346A2386CF2F1A87CF67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AB1E0ED6FB3114BB54A7F /* libapp.a in Frameworks */,
+				C2E6C8AEDD2593CEDA0FF56E /* CoreGraphics.framework in Frameworks */,
+				BC154D2806958548B45E8020 /* Metal.framework in Frameworks */,
+				F12D4022C352B860AEAFE973 /* MetalKit.framework in Frameworks */,
+				8A7D56748587C285869A521B /* QuartzCore.framework in Frameworks */,
+				BC083D187835B5D8F8D38BB5 /* Security.framework in Frameworks */,
+				F7BA9314789704352FD82838 /* UIKit.framework in Frameworks */,
+				EBCD3AB9ED9F2FEA820774A9 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046525A664ABDA04FC7979EF /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				8885D696EA7D0635F554B3DE /* libapp.a */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		111F88F71040D04CF6ADA83D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				405C84AD2271D346C1380692 /* ClaraN_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		584C64E00E79E5D1DFB1DA11 /* ClaraN_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C1D6B808C5F655F57689E2B6 /* ClaraN_iOS.entitlements */,
+				2FD661945C5E1DAEA6494818 /* Info.plist */,
+			);
+			path = ClaraN_iOS;
+			sourceTree = "<group>";
+		};
+		59E84134144DDA11C7489D0A /* ClaraN */ = {
+			isa = PBXGroup;
+			children = (
+				396701A3933A6D475F5E6A9A /* main.mm */,
+				E9B669AC6D8B744CB151E98F /* bindings */,
+			);
+			path = ClaraN;
+			sourceTree = "<group>";
+		};
+		685D61F48A75FF378D628969 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				046525A664ABDA04FC7979EF /* debug */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		7585E57BC2F1CDC3F7741F7A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BD3C02AE708F9BC41346AEE9 /* lib.rs */,
+				5912D3DB844E3465803BB826 /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		786895176A685893AF4C74D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A3A21EB549D89978258DCCC /* CoreGraphics.framework */,
+				3256DC9198247A04E9C7CE98 /* libapp.a */,
+				14A3C4F3F3C029FD81DC8003 /* Metal.framework */,
+				658703DF2C17C55F2D1E8C46 /* MetalKit.framework */,
+				8A96B5970DE071FA5E842D11 /* QuartzCore.framework */,
+				C1E73FADE1D774BAEB19CDF7 /* Security.framework */,
+				D4C943B23C8F84511AE7639F /* UIKit.framework */,
+				E05CDDE1E27A8779C1DB77C0 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86042DA3EF2DCC2D1981D6A2 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				685D61F48A75FF378D628969 /* x86_64 */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		A537839514025606B3E884A0 = {
+			isa = PBXGroup;
+			children = (
+				5DB483C78F8A6B13771DFFE4 /* assets */,
+				BBF4C7D709FAE81BAD3F4C7A /* Assets.xcassets */,
+				531D92ABF46A8C544F78F8EF /* LaunchScreen.storyboard */,
+				584C64E00E79E5D1DFB1DA11 /* ClaraN_iOS */,
+				86042DA3EF2DCC2D1981D6A2 /* Externals */,
+				DDF55DE59C7AB66AE6BEE8BA /* Sources */,
+				7585E57BC2F1CDC3F7741F7A /* src */,
+				786895176A685893AF4C74D3 /* Frameworks */,
+				111F88F71040D04CF6ADA83D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDF55DE59C7AB66AE6BEE8BA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				59E84134144DDA11C7489D0A /* ClaraN */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E9B669AC6D8B744CB151E98F /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				8006E4AE34E1B6E0E5824B29 /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		"TEMP_68570E33-92A1-4B56-96BD-C5902CA97D06" /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = arm64;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D122B244A12C094BBE8C380D /* ClaraN_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27ADF44E090FD88184E685F1 /* Build configuration list for PBXNativeTarget "ClaraN_iOS" */;
+			buildPhases = (
+				079B32310C2A5961F54237EB /* Build Rust Code */,
+				79C93C176A18626ED1974F24 /* Sources */,
+				C17AF6E9951A2CA3F3FFF9B7 /* Resources */,
+				3F1E346A2386CF2F1A87CF67 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClaraN_iOS;
+			packageProductDependencies = (
+			);
+			productName = ClaraN_iOS;
+			productReference = 405C84AD2271D346C1380692 /* ClaraN_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6399F319D43DBCE5665021D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 52CB438E7F8C915AE8A5FC90 /* Build configuration list for PBXProject "ClaraN" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A537839514025606B3E884A0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 54;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D122B244A12C094BBE8C380D /* ClaraN_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C17AF6E9951A2CA3F3FFF9B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2442972DA829EF3F99DE3B /* Assets.xcassets in Resources */,
+				4425827A519B6EFF659F6330 /* LaunchScreen.storyboard in Resources */,
+				BAFA90FFB5EF12CABF36E8A9 /* assets in Resources */,
+				A8AE96DD1FD43D13F14EA8D4 /* libapp.a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		079B32310C2A5961F54237EB /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pnpm tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79C93C176A18626ED1974F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676E3215338A2DDF19E6155E /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		150CD696B58BE3C74BD83ECC /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		58EEAF10580F8F9709886384 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClaraN_iOS/ClaraN_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = ClaraN_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.dev;
+				PRODUCT_NAME = "ClaraN";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
+			};
+			name = release;
+		};
+		CD59E89BA41FBEB31DA772AA /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClaraN_iOS/ClaraN_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = ClaraN_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.dev;
+				PRODUCT_NAME = "ClaraN";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
+			};
+			name = debug;
+		};
+		E3B331F9B6FA66A67BE1F2FB /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27ADF44E090FD88184E685F1 /* Build configuration list for PBXNativeTarget "ClaraN_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD59E89BA41FBEB31DA772AA /* debug */,
+				58EEAF10580F8F9709886384 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		52CB438E7F8C915AE8A5FC90 /* Build configuration list for PBXProject "ClaraN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3B331F9B6FA66A67BE1F2FB /* debug */,
+				150CD696B58BE3C74BD83ECC /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6399F319D43DBCE5665021D2 /* Project object */;
+}
