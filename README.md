@@ -83,9 +83,54 @@ pnpm ios:dev
 | 🎨 **Image Generation** | ❌ No | ✅ ComfyUI | ✅ Basic DALL-E | ❌ No | ❌ No |
 | 🧱 **Widget System** | ❌ No | ✅ Dynamic Dashboard | ❌ No | ✅ Basic | ❌ No |
 | 🔧 **Code Execution** | ❌ No | ✅ OpenInterpreter | ❌ No | ❌ No | ❌ No |
-| 📱 **Mobile App** | ✅ Tauri | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
-| 🖥️ **Desktop App** | ✅ Tauri | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
+| 📱 **Mobile App** | ✅ Tauri - Android [iOS] | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
+| 🖥️ **Desktop App** | ✅ Tauri - MacOS Ubuntu Windows | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 
+
+## 🗓️ Release Timeline & Roadmap
+
+
+### **🎯 Current Release Status**
+
+| **Component** | **Status** | **Description** |
+|---------------|------------|-----------------|
+| 🧠 **Clara AI Assistant** | 0.4.0 open | Chat Interface with multi-provider support |
+| 🐳 **Docker Deployment** | 0.3.0 open | One-command local deployment |
+| 🧠 **Clara AI Assistant** | 0.2.0 in progress | Chat Interface with ollama provider support |
+| 🧠 **Clara AI Assistant** | ✅ **0.1.1 Released** | Started with UI layout |
+| 📱 **Mobile Apps** | ✅ **Released** | Android support, iOS (simulator only) |
+| 🖥️ **Desktop Apps** | ✅ **Released** | Windows, macOS, Linux support |
+
+## 🔐 **Privacy & Security**
+
+| 🛡️ **Privacy Feature** | **Status** | **Details** |
+|------------------------|------------|-------------|
+| **Local Processing** | ✅ 100% | All AI models run on your machines |
+| **No Telemetry** | ✅ Zero | No data collection or phone home |
+| **Open Source** | ✅ Full | Complete codebase transparency |
+| **Self-Hosted** | ✅ Complete | Own your entire AI stack |
+| **No Cloud APIs** | ✅ Optional | Cloud providers only if you choose |
+| **Encrypted Storage** | ✅ Built-in | Local data encrypted by default |
+
+
+## 🌍 **Community & Support**
+
+<div align="center">
+
+### **Join the ClaraVerse Community**
+
+<table>
+<tr>
+  <td align="center">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="50"/>
+    <br/><strong>GitHub</strong><br/>
+    <a href="https://github.com/vanvuongngo/ClaraN/issues">Issues</a> -
+    <a href="https://github.com/vanvuongngo/ClaraN/pulls">PRs</a>
+  </td>
+</tr>
+</table>
+
+</div>
 
 ## 📜 License
 ClaraN is open-source software licensed under the MIT License. This means you can:
