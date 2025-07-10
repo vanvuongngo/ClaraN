@@ -1,23 +1,16 @@
 import { component$ } from "@builder.io/qwik";
 import { ChatContentArea } from "./ChatContentArea";
 import { ChatInput } from "./ChatInput";
-import { Header } from "./Header";
+import { TopBar } from "./TopBar";
 
 export const MainChatArea = component$(() => {
   return (
     <>
-      {/* <header class="navbar bg-base-300 px-4 shadow-sm"> */}
-      <header class="bg-base-300 hidden items-center justify-between p-4 shadow lg:flex">
-        <Header />
-      </header>
+      <TopBar />
 
-      <section class="flex-1 space-y-4 overflow-y-auto p-6">
-        <ChatContentArea />
-      </section>
+      <ChatContentArea />
 
-      <footer class="border-base-content/10 border-t p-4">
-        <ChatInput />
-      </footer>
+      <ChatInput />
     </>
   );
 });

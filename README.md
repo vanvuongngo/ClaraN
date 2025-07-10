@@ -72,7 +72,70 @@ pnpm android:dev
 pnpm ios:dev
 ```
 
-## 🆚 **ClaraN vs The Competition**
+## 📸 **Visual Showcase**
+
+<details>
+<summary><strong>🖼️ Click to see screenshots</strong></summary>
+
+### 📱 **Mobile Chat**
+
+<table>
+
+<thead>
+<tr>
+  <th>System</td>
+  <th>Chat</th>
+  <th>Sidebar</th>
+  <th>Keyboard</th>
+</tr>
+</thead>
+
+<tbody>
+
+<!-- Android -->
+<tr>
+<td style="vertical-align: baseline;">Android</td>
+<td><img src="assets/snapshots/android_chat.jpg" width="200px" alt="Android chat version" /></td>
+<td><img src="assets/snapshots/android_sidebar.jpg" width="200px" alt="Android sidebar" /></td>
+<td><img src="assets/snapshots/android_chat_keyboard.jpg" width="200px" alt="Android keyboard" /></td>
+</tr>
+
+<!-- iOS -->
+<tr>
+<td>iOS</td>
+<td><img src="assets/snapshots/ios_chat.png" width="200px" alt="iOS chat version" /></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+
+### 🖥️ **Desktop Chat**
+
+<table>
+
+<thead>
+<tr>
+  <th>System</td>
+  <th>Chat</th>
+</tr>
+</thead>
+
+<tbody>
+
+<!-- MacOS -->
+<tr>
+<td style="vertical-align: baseline;">MacOS</td>
+<td><img src="assets/snapshots/desktop_chat.png" width="800px" alt="Android chat version" /></td> 
+</tr>
+
+</tbody>
+</table>
+
+</details>
+
+## 🆚 ClaraN vs The Competition
 
 | Feature | **ClaraN** | **ClaraVerse** | OpenWebUI | LibreChat | Ollama WebUI |
 |---------|------------|----------------|-----------|-----------|--------------|
@@ -90,7 +153,7 @@ pnpm ios:dev
 ## 🗓️ Release Timeline & Roadmap
 
 
-### **🎯 Current Release Status**
+### 🎯 Current Release Status
 
 | **Component** | **Status** | **Description** |
 |---------------|------------|-----------------|
@@ -101,7 +164,7 @@ pnpm ios:dev
 | 📱 **Mobile Apps** | ✅ **Released** | Android support, iOS (simulator only) |
 | 🖥️ **Desktop Apps** | ✅ **Released** | Windows, macOS, Linux support |
 
-## 🔐 **Privacy & Security**
+## 🔐 Privacy & Security
 
 | 🛡️ **Privacy Feature** | **Status** | **Details** |
 |------------------------|------------|-------------|
@@ -113,19 +176,20 @@ pnpm ios:dev
 | **Encrypted Storage** | ✅ Built-in | Local data encrypted by default |
 
 
-## 🌍 **Community & Support**
+## 🌍 Community & Support
 
 <div align="center">
 
-### **Join the ClaraVerse Community**
+### Join the ClaraN Community
 
 <table>
 <tr>
   <td align="center">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="50"/>
     <br/><strong>GitHub</strong><br/>
-    <a href="https://github.com/vanvuongngo/ClaraN/issues">Issues</a> -
-    <a href="https://github.com/vanvuongngo/ClaraN/pulls">PRs</a>
+    <a href="https://github.com/vanvuongngo/ClaraN/issues">Issue</a> -
+    <a href="https://github.com/vanvuongngo/ClaraN/pulls">PR</a> -
+    <a href="https://github.com/users/vanvuongngo/projects/4">Board</a>
   </td>
 </tr>
 </table>
