@@ -1,4 +1,11 @@
 import { component$ } from "@builder.io/qwik";
+import {
+  LuArchive,
+  LuSettings,
+  LuSparkles,
+  LuStar,
+  LuTrash2,
+} from "@qwikest/icons/lucide";
 
 export const Options = component$(() => {
   return (
@@ -6,20 +13,28 @@ export const Options = component$(() => {
       <ul class="menu">
         <li>
           <a>
-            ⭐ <span class="peer-checked:hidden">Starred</span>
+            <LuStar /> <span class="peer-checked:hidden">Starred</span>
           </a>
         </li>
         <li>
-          <a>📦 Archived</a>
+          <a>
+            <LuArchive /> Archived
+          </a>
         </li>
         <li>
-          <a>🗑 Trash</a>
+          <a>
+            <LuTrash2 /> Trash
+          </a>
         </li>
         <li>
-          <a>🧪 What's New</a>
+          <a>
+            <LuSparkles /> What's New
+          </a>
         </li>
         <li>
-          <a>⚙️ Settings</a>
+          <a>
+            <LuSettings /> Settings
+          </a>
         </li>
       </ul>
     </div>
