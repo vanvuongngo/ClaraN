@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 
 export const ChatHistory = component$(() => {
+  // flex-1 move next element to the end (options)
   return (
     <div class="flex-1">
       <ul class="menu">

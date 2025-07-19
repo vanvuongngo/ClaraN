@@ -1,22 +1,21 @@
 import { component$ } from "@builder.io/qwik";
+import { LuMenu, LuMessagesSquare } from "@qwikest/icons/lucide";
 
 export const Logo = component$(() => {
   return (
-    <>
-      <div class="flex items-center justify-between p-4">
-        <input id="collapse-toggle" type="checkbox" class="drawer-toggle" />
-        <div class="text-xl font-bold">
-          🧠 <span class="peer-checked:hidden">ClaraN</span>
+    <div class="@container">
+      <div class="flex p-4">
+        <LuMessagesSquare class="text-xl" />
+
+        <div class="ml-2 hidden text-xl font-bold @min-[135px]:block">
+          ClaraN
         </div>
 
-        <label for="sidebar-toggle" class="btn btn-ghost btn-square">
-          ☰
-        </label>
-
-        <label for="collapse-toggle" class="btn btn-sm btn-ghost">
-          <span class="transition-transform peer-checked:rotate-180">⏴</span>
+        {/* mobile and popup opened */}
+        <label for="sidebar-toggle" class="btn btn-ghost btn-circle lg:hidden">
+          <LuMenu />
         </label>
       </div>
-    </>
+    </div>
   );
 });
