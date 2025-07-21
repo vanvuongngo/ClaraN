@@ -10,7 +10,7 @@ export const SideBar = component$(() => {
       {/* toggler for desktop */}
       <input id="desktop-toggler" type="checkbox" class="peer hidden" />
 
-      <aside class="menu bg-base-200 text-base-content flex h-full transition-all peer-checked:w-18 peer-checked:p-0 peer-checked:duration-300">
+      <aside class="menu bg-base-200 text-base-content flex h-full w-64 transition-all peer-checked:w-18 peer-checked:p-0 peer-checked:duration-300">
         <Logo />
         <ChatHistory />
         <Options />

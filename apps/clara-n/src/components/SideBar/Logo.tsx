@@ -4,7 +4,7 @@ import { LuMenu, LuMessagesSquare } from "@qwikest/icons/lucide";
 export const Logo = component$(() => {
   return (
     <div class="@container">
-      <div class="flex p-4">
+      <div class="flex pt-4 pb-12 pl-2">
         <LuMessagesSquare class="text-xl" />
 
         <div class="ml-2 hidden text-xl font-bold @min-[135px]:block">
