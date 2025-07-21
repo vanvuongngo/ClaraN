@@ -119,6 +119,7 @@ pnpm ios:dev
 <tr>
   <th>System</td>
   <th>Chat</th>
+  <th>Collapsed sidebar</th>
 </tr>
 </thead>
 
@@ -127,7 +128,8 @@ pnpm ios:dev
 <!-- MacOS -->
 <tr>
 <td style="vertical-align: baseline;">MacOS</td>
-<td><img src="assets/snapshots/desktop_chat.png" width="800px" alt="Android chat version" /></td> 
+<td><img src="assets/snapshots/desktop_chat.png" width="800px" alt="MacOS desktop chat version" /></td>
+<td><img src="assets/snapshots/macos_desktop_collapsed_sidebar.png" width="500px" alt="Assistent wiht collapsed sidebar" /></td>
 </tr>
 
 </tbody>
