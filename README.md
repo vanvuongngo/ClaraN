@@ -32,6 +32,9 @@ AppImage on Ubuntu: ***AppImages require FUSE to run***
 sudo apt-get install libfuse2
 ```
 
+Debian:
+The installation is failing because of missinng libraries. Any clue how to fix?
+
 ### 📱 Mobile App
 
 | operation system | supported | bundle |
@@ -180,9 +183,11 @@ pnpm ios:dev
 
 ## 🌍 Community & Support
 
+Any help is welcome ...
 <div align="center">
 
 ### Join the ClaraN Community
+
 
 <table>
 <tr>
@@ -197,6 +202,24 @@ pnpm ios:dev
 </table>
 
 </div>
+
+## How to build a new release
+
+1. Clone the project
+```sh
+git clone git@github.com:<USER>/ClaraN.git
+```
+
+2. Create a tag and push it, e.g. `v1.0.0`, which will trigger the github CI
+```sh
+git tag v1.0.0 && git push origin v1.0.0
+```
+
+3. A new draft release will created and you can add add more informations about the changes, here https://github.com/<USER>/ClaraN/releases
+
+4. Ensure that the github secrets are setup for the mobile builds: https://github.com/<USER>/ClaraN/settings/secrets/actions
+
+5. Ready? Click: `publish release`
 
 ## 📜 License
 ClaraN is open-source software licensed under the MIT License. This means you can:
