@@ -215,7 +215,7 @@ git clone git@github.com:<USER>/ClaraN.git
 git tag v1.0.0 && git push origin v1.0.0
 ```
 
-3. A new draft release will created and you can add add more informations about the changes, here https://github.com/USER/ClaraN/releases
+3. A new draft release will created and you can add more informations about the changes, here https://github.com/USER/ClaraN/releases
 
 4. Ensure that the github secrets are setup for the mobile builds: https://github.com/USER/ClaraN/settings/secrets/actions
 
