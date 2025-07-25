@@ -7,9 +7,7 @@ export const MainChatArea = component$(() => {
   return (
     <>
       <TopBar />
-
       <ChatContentArea />
-
       <ChatInput />
     </>
   );
