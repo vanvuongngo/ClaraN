@@ -55,12 +55,12 @@ pnpm install
 
 ### Web app
 ```sh
-pnpm dev
+pnpm web:dev
 ```
 
 ### Desktop app
 ```sh
-pnpm desktop:dev
+pnpm dev
 ```
 
 ### Android mobile app
