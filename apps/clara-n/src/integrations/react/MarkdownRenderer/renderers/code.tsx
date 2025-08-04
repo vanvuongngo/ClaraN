@@ -16,17 +16,19 @@ const handleCopy = async (code: string) => {
   await writeText(code);
 };
 
+interface CodeProps {
+  [x: string]: any;
+  inline?: boolean;
+  className?: string;
+  children?: any;
+}
+
 export const code = ({
   inline,
   className,
   children: codeChildren,
   ...props
-}: {
-  [x: string]: any;
-  inline: boolean;
-  className: string;
-  children: any;
-}): JSX.Element => {
+}: CodeProps): JSX.Element => {
   const match = /language-(\w+)/.exec(className || "");
 
   if (!inline && match) {

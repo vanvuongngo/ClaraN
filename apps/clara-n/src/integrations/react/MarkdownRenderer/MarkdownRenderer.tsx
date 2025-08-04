@@ -1,7 +1,7 @@
 /** @jsxImportSource react */
 
 import { qwikify$ } from "@builder.io/qwik-react";
-import Markdown, { Components } from "react-markdown";
+import Markdown, { type Components } from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { code } from "./renderers/code";
