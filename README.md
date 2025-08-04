@@ -152,7 +152,7 @@ pnpm ios:dev
 | 🧱 **Widget System** | ❌ No | ✅ Dynamic Dashboard | ❌ No | ✅ Basic | ❌ No |
 | 🔧 **Code Execution** | ❌ No | ✅ OpenInterpreter | ❌ No | ❌ No | ❌ No |
 | 📱 **Mobile App** | ✅ Tauri - Android [iOS] | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
-| 🖥️ **Desktop App** | ✅ Tauri - MacOS Ubuntu Windows | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
+| 🖥️ **Desktop App** | ✅ Tauri - MacOS Linux Windows | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 
 
 ## 🗓️ Release Timeline & Roadmap
