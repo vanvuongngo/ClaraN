@@ -3,7 +3,6 @@ import {
   LuDatabase,
   LuHome,
   LuMonitor,
-  LuMoon,
   LuSettings,
   LuUser,
   LuWrench,
