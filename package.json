@@ -6,7 +6,6 @@
     "pnpm": ">=10.12.2"
   },
   "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
-  "packageManager": "^pnpm@10.12.2",
   "private": true,
   "type": "module",
   "scripts": {

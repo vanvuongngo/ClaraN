@@ -4,13 +4,18 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: 22
+  NODE_VERSION: "lts/*"
+  PNPM_VERSION: 10
 
 jobs:
   linting:
     name: Linting
     runs-on: ubuntu-latest
     steps:
+      # https://github.com/actions/checkout
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -23,10 +28,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
-
-      # https://github.com/actions/checkout
-      - name: Code Checkout
-        uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: pnpm i
