@@ -2,7 +2,8 @@ import { component$, useSignal } from "@builder.io/qwik";
 import {
   LuDatabase,
   LuHome,
-  /*LuSun, LuMoon,*/ LuMonitor,
+  LuMonitor,
+  LuMoon,
   LuSettings,
   LuUser,
   LuWrench,
@@ -38,7 +39,7 @@ export const TopBar = component$<NavBarProps>(({ title }) => {
 
         <div class="dropdown dropdown-end">
           <div
-            tabIndex="0"
+            tabIndex={0}
             role="button"
             class="btn btn-ghost btn-circle avatar"
           >
