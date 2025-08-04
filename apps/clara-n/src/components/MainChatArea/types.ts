@@ -10,3 +10,7 @@ export type ChatEvent = {
 export interface ChatStore {
   chats: string[][];
 }
+
+export interface QuestionRendererProps {
+  question: string;
+}

@@ -22,12 +22,13 @@ pub async fn ask_ollama(app: AppHandle, prompt: String) -> Result<(), String> {
 
     let client = reqwest::Client::new();
     let mut map = HashMap::new();
+    //TODO: setup model as a setting
     map.insert("model", "llama3.2".to_string());
     map.insert("prompt", prompt);
 
+    //TODO: setup host as a setting
     let mut res = client
-        // .post("http://127.0.0.1:11434/api/generate")
-        .post("http://192.168.0.4:11434/api/generate")
+        .post("http://127.0.0.1:11434/api/generate")
         .json(&map)
         .send()
         .await

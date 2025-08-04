@@ -25,7 +25,7 @@ export const ChatInput = component$(() => {
   );
 
   return (
-    <footer class="border-base-content/10 border-t p-4">
+    <footer class="border-base-content/10 p-4">
       <div class="join w-full">
         <input
           class="input input-bordered join-item w-full"
