@@ -17,6 +17,7 @@
     "build.dmg": "pnpm --filter clara-n tauri build --bundles dmg",
     "dev": "pnpm --filter clara-n tauri dev",
     "ios:dev": "pnpm --filter clara-n tauri ios dev",
+    "retag": "git tag -d ${VERSION} && git push origin :${VERSION} && git tag ${VERSION} && git push origin ${VERSION}",
     "web:dev": "pnpm --filter clara-n dev"
   },
   "devDependencies": {
