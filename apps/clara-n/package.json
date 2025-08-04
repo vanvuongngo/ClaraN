@@ -22,7 +22,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "qwik": "qwik"
   }
 }
