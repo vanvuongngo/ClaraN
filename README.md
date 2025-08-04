@@ -27,13 +27,29 @@ This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVe
 
 #### Troubleshooting
 
-AppImage on Ubuntu: ***AppImages require FUSE to run***
+- Failed to run AppImage on Ubuntu: ***AppImages require FUSE to run***
 ```sh
 sudo apt-get install libfuse2
 ```
 
-Debian:
-The installation is failing because of missinng libraries. Any clue how to fix?
+- Failed to run AppImage on Debian: ***The installation is failing because of missing libraries. Any clue how to fix?***
+
+- Failed to build android with `pnpm android:build`: ***set the OPENSSL_DIR env***
+
+1.  find the path with `brew`
+```sh
+brew info openssl@3
+```
+
+1. or find the path with `whereis`
+```sh
+whereis openssl
+```
+
+2. set path in your environment, e.g. `~/.zshrc`
+```
+export OPENSSL_DIR=/usr/local/Cellar/openssl@3/3.5.1
+````
 
 ### 📱 Mobile App
 
