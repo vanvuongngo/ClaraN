@@ -171,7 +171,7 @@ jobs:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
-          PKG_CONFIG_SYSROOT_DIR: /
+          PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
           OPENSSL_LIB_DIR: /usr/lib/x86_64-linux-gnu/
           OPENSSL_INCLUDE_DIR: /usr/include/openssl/
         with:
