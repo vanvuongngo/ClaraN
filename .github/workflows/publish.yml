@@ -8,7 +8,7 @@ on:
 env:
   JAVA_DISTRIBUTION: "zulu"
   JAVA_VERSION: 17
-  NDK_MAJOR_VERSION: 29
+  NDK_MAJOR_VERSION: 28
   NODE_VERSION: "lts/*"
   PNPM_VERSION: 10
   SRC_TAURI: "apps/clara-n/src-tauri"
@@ -117,7 +117,7 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         uses: android-actions/setup-android@v3
         with:
-          log-accepted-android-sdk-license: false
+          log-accepted-android-sdk-licenses: false
       - name: Set NDK_HOME environment (Android)
         if: matrix.platform == 'ubuntu-latest'
         run: |
