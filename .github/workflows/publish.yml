@@ -8,7 +8,7 @@ on:
 env:
   JAVA_DISTRIBUTION: "zulu"
   JAVA_VERSION: 17
-  NDK_MAJOR_VERSION: 28
+  NDK_MAJOR_VERSION: 29
   NODE_VERSION: "lts/*"
   PNPM_VERSION: 10
   SRC_TAURI: "apps/clara-n/src-tauri"
@@ -69,10 +69,6 @@ jobs:
           # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
 
-      # - name: Debug tauri.conf.json
-      #   run: |
-      #     cat ${{ env.SRC_TAURI }}/tauri.conf.json
-
       - name: Import Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
         env:
@@ -120,6 +116,8 @@ jobs:
       - name: Setup Android SDK (Android)
         if: matrix.platform == 'ubuntu-latest'
         uses: android-actions/setup-android@v3
+        with:
+          log-accepted-android-sdk-license: false
       - name: Set NDK_HOME environment (Android)
         if: matrix.platform == 'ubuntu-latest'
         run: |
