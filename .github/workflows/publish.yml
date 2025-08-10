@@ -199,6 +199,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
 
