@@ -8,6 +8,7 @@ version = "0.0.0"
 dependencies = [
  "log",
  "openssl",
+ "openssl-sys",
  "reqwest",
  "serde",
  "serde_json",
