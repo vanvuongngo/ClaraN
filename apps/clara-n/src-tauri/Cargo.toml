@@ -23,7 +23,5 @@ serde = { version = "1.0", features = ["derive"] }
 log = "0.4"
 tauri = { version = "2.7.0", features = [] }
 tauri-plugin-log = "2.6"
-reqwest = { version = "0.12.22", features = ["json"] }
+reqwest = { version = "0.12.22", default-features = false, features = ["rustls-tls", "json"] }
 tauri-plugin-clipboard-manager = "2.3"
-openssl = { version = "0.10.73", features = ["vendored"] }
-openssl-sys = "0.9.109"
