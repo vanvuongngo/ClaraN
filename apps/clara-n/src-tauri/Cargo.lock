@@ -7,6 +7,7 @@ name = "ClaraN"
 version = "0.0.0"
 dependencies = [
  "log",
+ "openssl",
  "reqwest",
  "serde",
  "serde_json",
