@@ -49,7 +49,7 @@ whereis openssl
 2. set path in your environment, e.g. `~/.zshrc`
 ```
 export OPENSSL_DIR=/usr/local/Cellar/openssl@3/3.5.1
-````
+```
 
 ### 📱 Mobile App
 
@@ -218,6 +218,32 @@ Any help is welcome ...
 </table>
 
 </div>
+
+
+## How to run on mobile Android
+  
+1. Install termux
+   
+2a. **networkless mode**:
+
+install ollama local AI server
+```
+pkg install ollama
+```
+
+run ollama
+```
+ollama serve
+```
+
+then pull AI model (other models will come)
+```
+ollama pull llama3.2
+```
+
+2b. **shared ollama server**:
+
+- setup ssh port forward
 
 ## How to build a new release
 
