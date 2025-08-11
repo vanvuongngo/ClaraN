@@ -4,7 +4,14 @@ use crate::commands::ollama::ask_ollama;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default()
+    let builder = tauri::Builder::default();
+
+    #[cfg(not(any(target_os = "android", target_os = "ios")))]
+    {
+        builder = builder.plugin(tauri_plugin_updater::Builder::new().build());
+    }
+
+    builder
         .plugin(tauri_plugin_clipboard_manager::init())
         .setup(|app| {
             if cfg!(debug_assertions) {
