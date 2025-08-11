@@ -8,6 +8,7 @@ on:
 env:
   JAVA_DISTRIBUTION: "zulu"
   JAVA_VERSION: 17
+  # https://developer.android.com/ndk/downloads
   NDK_MAJOR_VERSION: 28
   NODE_VERSION: "lts/*"
   PNPM_VERSION: 10
@@ -15,7 +16,7 @@ env:
   DEFAULT_BRANCH: "master"
 
 jobs:
-  # set TAG as version in tauri.conf.json
+  # set the git tag as the version in tauri.conf.json
   version:
     permissions:
       contents: write
@@ -49,12 +50,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - args: "--target aarch64-apple-darwin"
+          - platform: macos-latest
+            args: "--target aarch64-apple-darwin"
             arch: "arm64"
-            platform: macos-latest
-          - args: "--target x86_64-apple-darwin"
+          - platform: macos-latest
+            args: "--target x86_64-apple-darwin"
             arch: "x64"
-            platform: macos-latest
           - platform: "ubuntu-latest"
           - platform: "windows-latest"
     runs-on: ${{ matrix.platform }}
@@ -69,6 +70,7 @@ jobs:
           # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
 
+      # MacOS
       - name: Import Apple Developer Certificate (macOS)
         if: matrix.platform == 'macos-latest'
         env:
@@ -170,8 +172,6 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
           PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
-          OPENSSL_LIB_DIR: /usr/lib/x86_64-linux-gnu
-          OPENSSL_INCLUDE_DIR: /usr/include/openssl
         with:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
@@ -200,7 +200,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # required to get the new version from the versioning job
           ref: ${{ github.ref_name }}
 
       # https://github.com/ad-m/github-push-action

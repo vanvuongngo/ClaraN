@@ -28,7 +28,7 @@ pub async fn ask_ollama(app: AppHandle, prompt: String) -> Result<(), String> {
 
     //TODO: setup host as a setting
     let mut res = client
-        .post("http://127.0.0.1:11434/api/generate")
+        .post("http://192.168.0.4:11434/api/generate")
         .json(&map)
         .send()
         .await
