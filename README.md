@@ -179,8 +179,8 @@ pnpm ios:dev
 | **Component** | **Status** | **Description** |
 |---------------|------------|-----------------|
 | 🧠 **Clara AI Assistant** | 0.4.0 open | Chat Interface with multi-provider support |
-| 🐳 **Docker Deployment** | 0.3.0 open | One-command local deployment |
-| 🧠 **Clara AI Assistant** | 0.2.0 in progress | Chat Interface with ollama provider support |
+| 🐳 **Docker Deployment** | 0.3.0 in progress | One-command local deployment |
+| 🧠 **Clara AI Assistant** | ✅ **0.2.0 Released** | Chat Interface with ollama provider support |
 | 🧠 **Clara AI Assistant** | ✅ **0.1.1 Released** | Started with UI layout |
 | 📱 **Mobile Apps** | ✅ **Released** | Android support, iOS (simulator only) |
 | 🖥️ **Desktop Apps** | ✅ **Released** | Windows, macOS, Linux support |
