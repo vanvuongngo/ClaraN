@@ -27,21 +27,21 @@ This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVe
 
 #### Troubleshooting
 
-- Failed to run AppImage on Ubuntu: ***AppImages require FUSE to run***
+- *Failed to run AppImage on Ubuntu:* AppImages require FUSE to run
 ```sh
 sudo apt-get install libfuse2
 ```
 
-- Failed to run AppImage on Debian: ***The installation is failing because of missing libraries. Any clue how to fix?***
+- *Failed to run AppImage on Debian:* The installation is failing because of missing libraries. Any clue how to fix?
 
-- Failed to build android with `pnpm android:build`: ***set the OPENSSL_DIR env***
+- *Failed to build android on MacOS* `pnpm android:build`: set the OPENSSL_DIR env
 
-1.  find the path with `brew`
+1a.  find the path with `brew`
 ```sh
 brew info openssl@3
 ```
 
-1. or find the path with `whereis`
+1b. or find the path with `whereis`
 ```sh
 whereis openssl
 ```
@@ -50,6 +50,15 @@ whereis openssl
 ```
 export OPENSSL_DIR=/usr/local/Cellar/openssl@3/3.5.1
 ```
+
+- *Installation blocked on MacOS*
+
+Open settings then **Security & Privacy** -> scroll to **Security** and **force open**
+<img src="assets/snapshots/macos_allow_dmg.png" width="600px" alt="option to allow installation" />
+
+When start the app go also to the settings then **Security & Privacy** -> scroll to **Security** and **force open**
+<img src="assets/snapshots/macos_allow_start.png" width="600px" alt="option to allow installation" />
+
 
 ### 📱 Mobile App
 
