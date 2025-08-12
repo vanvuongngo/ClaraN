@@ -173,6 +173,7 @@ jobs:
           APPLE_SIGNING_IDENTITY: ${{ env.CERT_ID }}
           PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
         with:
+          appName: ClaraN
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "ClaraN v__VERSION__"
           releaseBody: "See the assets to download this version and install."
@@ -180,6 +181,7 @@ jobs:
           prerelease: false
           args: ${{ matrix.args || '' }}
           tauriScript: ${{ matrix.platform == 'ubuntu-latest' && 'pnpm tauri android' || '' }}
+          includeUpdaterJson: true
 
       # https://cli.github.com/manual/gh_release_upload
       - name: Add Android to release (Android)
