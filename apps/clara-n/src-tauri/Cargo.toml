@@ -19,9 +19,12 @@ tauri-build = { version = "2.3.1", features = [] }
 
 [dependencies]
 serde_json = "1.0.142"
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0.219", features = ["derive"] }
 log = "0.4"
 tauri = { version = "2.7.0", features = [] }
 tauri-plugin-log = "2.6"
 reqwest = { version = "0.12.22", default-features = false, features = ["rustls-tls", "json"] }
 tauri-plugin-clipboard-manager = "2.3"
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-updater = "2.9"

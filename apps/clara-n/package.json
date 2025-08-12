@@ -20,6 +20,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "postlint": "cd src-tauri && cargo fmt",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "tauri": "tauri",
