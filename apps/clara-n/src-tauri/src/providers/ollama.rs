@@ -1,3 +1,5 @@
+// Ollama API https://ollama.readthedocs.io/en/api/
+
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use tauri::{AppHandle, Emitter};
@@ -18,7 +20,7 @@ pub async fn ask_ollama(app: AppHandle, prompt: String) -> Result<(), String> {
         return Err("Please provide a prompt message".to_string());
     }
 
-    app.emit("ollama-prompted", prompt.clone()).unwrap();
+    app.emit("ollama_prompted", prompt.clone()).unwrap();
 
     let client = reqwest::Client::new();
     let mut map = HashMap::new();
@@ -37,7 +39,7 @@ pub async fn ask_ollama(app: AppHandle, prompt: String) -> Result<(), String> {
     while let Some(chunk) = res.chunk().await.expect("Failed on chunks") {
         let json: Json = serde_json::from_slice(&chunk).expect("Failed on parsing");
         let chunk = json.response.unwrap_or("".into());
-        app.emit("ollama-chunked", Payload { chunk }).unwrap();
+        app.emit("ollama_chunked", Payload { chunk }).unwrap();
     }
 
     Ok(())

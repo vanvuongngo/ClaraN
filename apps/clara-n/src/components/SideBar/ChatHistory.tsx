@@ -14,7 +14,7 @@ export const ChatHistory = component$(() => {
 
         <ul class="menu">
           <li>
-            <a class="active" title="erstelle eine meta description">
+            <a href="#" class="active" title="erstelle eine meta description">
               <LuMessageSquare class="text-md" />
               <span class="hidden @min-[135px]:block">
                 erstelle eine meta description
@@ -22,13 +22,13 @@ export const ChatHistory = component$(() => {
             </a>
           </li>
           <li>
-            <a title="Chat 2">
+            <a href="#" title="Chat 2">
               <LuMessageSquare class="text-md" />
               <span class="hidden @min-[135px]:block">Chat 2</span>
             </a>
           </li>
           <li>
-            <a title="Chat 3">
+            <a href="#" title="Chat 3">
               <LuMessageSquare class="text-md" />
               <span class="hidden @min-[135px]:block">Chat 3</span>
             </a>
