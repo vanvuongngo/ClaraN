@@ -37,7 +37,7 @@ sudo apt-get install libfuse2
 
 - *Failed to run AppImage on Debian:* The installation is failing because of missing libraries. Any clue how to fix?
 
-- *Failed to build android on MacOS* `pnpm android:build`: set the OPENSSL_DIR env
+- *Failed to build android on MacOS* `pnpm build:android`: set the OPENSSL_DIR env
 
 1a.  find the path with `brew`
 ```sh
@@ -87,7 +87,7 @@ pnpm install
 
 ### Web app
 ```sh
-pnpm web:dev
+pnpm dev:web
 ```
 
 ### Desktop app
@@ -98,13 +98,13 @@ pnpm dev
 ### Android mobile app
 - prerequisites: openjdk, Android Studio with one installed emulator
 ```sh
-pnpm android:dev
+pnpm dev:android
 ```
 
 ### iOS mobile app
 - prerequisites: XCode
 ```sh
-pnpm ios:dev
+pnpm dev:ios
 ```
 
 ## 📸 **Visual Showcase**
