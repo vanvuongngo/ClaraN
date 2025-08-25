@@ -25,6 +25,9 @@ This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVe
 | [Windows](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | x64-setup.exe, x64_en-US.msi |
 | [Linux](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | amd64.AppImage, amd64.deb, x86_64.rpm |
 
+<details>
+<summary>🔥 Click to see Troubleshooting</summary>
+
 #### Troubleshooting
 
 - *Failed to run AppImage on Ubuntu:* AppImages require FUSE to run
@@ -59,6 +62,7 @@ Open settings then **Security & Privacy** -> scroll to **Security** and **force 
 When start the app go also to the settings then **Security & Privacy** -> scroll to **Security** and **force open**
 <img src="assets/snapshots/macos_allow_start.png" width="600px" alt="option to allow installation" />
 
+</details>
 
 ### 📱 Mobile App
 
@@ -67,6 +71,9 @@ When start the app go also to the settings then **Security & Privacy** -> scroll
 | [Android](https://github.com/vanvuongngo/ClaraN/releases/latest) | :white_check_mark: | apk, aab |
 | iOS | :white_check_mark: | is planned |
 
+## Scenarios diagram
+
+<img src="assets/arch/scenarios.jpg" alt="scenarios" />
 
 ## 🛠️ Development Setup
 

@@ -14,11 +14,11 @@ export const ChatContentArea = component$(() => {
 
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ cleanup }) => {
-    listen<string>("ollama-prompted", (event) => {
+    listen<string>("ollama_prompted", (event) => {
       store.chats.push([event.payload, ""]);
     });
 
-    listen<ChatAnswer>("ollama-chunked", ({ payload /*, id*/ }: ChatEvent) => {
+    listen<ChatAnswer>("ollama_chunked", ({ payload /*, id*/ }: ChatEvent) => {
       store.chats[store.chats.length - 1][1] += payload.chunk;
 
       const id = setTimeout(scrollFunction, 200);
