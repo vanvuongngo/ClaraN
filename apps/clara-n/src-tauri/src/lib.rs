@@ -21,6 +21,7 @@ use tauri::Manager;
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_clipboard_manager::init())
+        .plugin(tauri_plugin_opener::init()) // https://v2.tauri.app/plugin/opener/
         .setup(|app| {
             // log plugin https://v2.tauri.app/plugin/logging/
             if cfg!(debug_assertions) {

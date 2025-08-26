@@ -8,6 +8,14 @@
   "permissions": [
     "core:default",
     "clipboard-manager:allow-write-text",
-    "clipboard-manager:allow-write-image"
+    "clipboard-manager:allow-write-image",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/latest"
+        }
+      ]
+    }
   ]
 }
