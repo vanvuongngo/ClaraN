@@ -21,7 +21,7 @@ tauri-build = { version = "2.3.1", features = [] }
 serde_json = "1.0.143"
 serde = { version = "1.0.219", features = ["derive"] }
 log = "0.4"
-tauri = { version = "2.8.3", features = [] }
+tauri = { version = "2.8.4", features = [] }
 tauri-plugin-log = "2.6"
 reqwest = { version = "0.12.23", default-features = false, features = ["rustls-tls", "json"] }
 tauri-plugin-clipboard-manager = "2.3"
