@@ -6,11 +6,11 @@ import { ClaraAssistant } from "~/components/ClaraAssistant";
 // from https://github.com/badboysm890/ClaraVerse/blob/main/src/App.tsx
 export default component$(() => {
   console.debug("ClaraN is a hardfork of the awesome ClaraVerse.");
-  console.debug("Why you want to use ClaraN?");
+  console.debug("Why you'll want to use ClaraN?");
   console.debug(
     "Because of the tech stack which is based on modern and lightweight technologies:",
   );
-  console.debug("Tauri, Qwik, NodeJS LTS, DaisyUI.");
+  console.debug("Tauri, Rust, Qwik, NodeJS LTS, DaisyUI.");
 
   const { data: activePage, set: setActivePage } = useLocalStorage<string>(
     "page",
