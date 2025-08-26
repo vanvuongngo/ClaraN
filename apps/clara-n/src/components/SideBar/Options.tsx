@@ -125,8 +125,8 @@ export const Options = component$(() => {
                 );
               }}
             >
-              <LuSparkles />
-              {" What's New"}
+              <LuSparkles />{" "}
+              <span class="hidden @min-[135px]:block">What's New</span>
             </a>
           </li>
           {/* <li>
