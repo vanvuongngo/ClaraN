@@ -6,13 +6,15 @@ import {
   useVisibleTask$,
 } from "@builder.io/qwik";
 import {
-  LuArchive,
-  LuSettings,
+  // LuArchive,
+  // LuSettings,
+  // LuStar,
+  // LuTrash2,
   LuSparkles,
-  LuStar,
-  LuTrash2,
 } from "@qwikest/icons/lucide";
 import { Channel, invoke } from "@tauri-apps/api/core";
+// https://v2.tauri.app/plugin/opener/
+import { openUrl } from "@tauri-apps/plugin-opener";
 import {
   AppVersions,
   CheckUpdateEvent,
@@ -98,34 +100,41 @@ export const Options = component$(() => {
               </button>
             </li>
           )}
-          <li>
+          {/* <li>
             <a href="#">
               <LuStar /> <span class="hidden @min-[135px]:block">Starred</span>
             </a>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <a href="#">
               <LuArchive />{" "}
               <span class="hidden @min-[135px]:block">Archived</span>
             </a>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <a href="#">
               <LuTrash2 /> <span class="hidden @min-[135px]:block">Trash</span>
             </a>
-          </li>
+          </li> */}
           <li>
-            <a href="#">
-              <LuSparkles />{" "}
-              <span class="hidden @min-[135px]:block">What's New</span>
+            <a
+              href="#"
+              onClick$={async () => {
+                await openUrl(
+                  "https://github.com/vanvuongngo/ClaraN/releases/latest",
+                );
+              }}
+            >
+              <LuSparkles />
+              {" What's New"}
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">
               <LuSettings />{" "}
               <span class="hidden @min-[135px]:block">Settings</span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

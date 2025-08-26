@@ -38,6 +38,9 @@ importers:
       '@tauri-apps/plugin-clipboard-manager':
         specifier: ~2.3.0
         version: 2.3.0
+      '@tauri-apps/plugin-opener':
+        specifier: ^2.5.0
+        version: 2.5.0
       '@tauri-apps/plugin-updater':
         specifier: ^2.9.0
         version: 2.9.0
@@ -63,8 +66,8 @@ importers:
         specifier: ^16.3.0
         version: 16.3.0
       lucide-react:
-        specifier: ^0.541.0
-        version: 0.541.0(react@18.3.1)
+        specifier: ^0.542.0
+        version: 0.542.0(react@18.3.1)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -794,6 +797,9 @@ packages:
 
   '@tauri-apps/plugin-clipboard-manager@2.3.0':
     resolution: {integrity: sha512-81NOBA2P+OTY8RLkBwyl9ZR/0CeggLub4F6zxcxUIfFOAqtky7J61+K/MkH2SC1FMxNBxrX0swDuKvkjkHadlA==}
+
+  '@tauri-apps/plugin-opener@2.5.0':
+    resolution: {integrity: sha512-B0LShOYae4CZjN8leiNDbnfjSrTwoZakqKaWpfoH6nXiJwt6Rgj6RnVIffG3DoJiKsffRhMkjmBV9VeilSb4TA==}
 
   '@tauri-apps/plugin-updater@2.9.0':
     resolution: {integrity: sha512-j++sgY8XpeDvzImTrzWA08OqqGqgkNyxczLD7FjNJJx/uXxMZFz5nDcfkyoI/rCjYuj2101Tci/r/HFmOmoxCg==}
@@ -1737,8 +1743,8 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  lucide-react@0.541.0:
-    resolution: {integrity: sha512-s0Vircsu5WaGv2KoJZ5+SoxiAJ3UXV5KqEM3eIFDHaHkcLIFdIWgXtZ412+Gh02UsdS7Was+jvEpBvPCWQISlg==}
+  lucide-react@0.542.0:
+    resolution: {integrity: sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -3069,6 +3075,10 @@ snapshots:
     dependencies:
       '@tauri-apps/api': 2.8.0
 
+  '@tauri-apps/plugin-opener@2.5.0':
+    dependencies:
+      '@tauri-apps/api': 2.8.0
+
   '@tauri-apps/plugin-updater@2.9.0':
     dependencies:
       '@tauri-apps/api': 2.8.0
@@ -4230,7 +4240,7 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lucide-react@0.541.0(react@18.3.1):
+  lucide-react@0.542.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
