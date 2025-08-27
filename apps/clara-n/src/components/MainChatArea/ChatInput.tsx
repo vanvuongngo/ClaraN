@@ -9,7 +9,7 @@ export const ChatInput = component$(() => {
     input.value = "";
     invoke("ask_ollama", {
       prompt,
-    }).catch((error: string) => console.error(error)); //TODO: show alert
+    }).catch((error: string) => console.error(error));
   });
 
   useOnDocument(
@@ -29,7 +29,7 @@ export const ChatInput = component$(() => {
       <div class="join w-full">
         <input
           class="input input-bordered join-item w-full"
-          placeholder={$localize`Ask me anything…`}
+          placeholder="Ask me anything…"
           bind:value={input}
         />
         <button class="btn btn-primary join-item" onClick$={chat}>

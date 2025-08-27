@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "ClaraN - AI",
+        "title": "ClaraN - AI Assistent",
         "width": 1024,
         "height": 800,
         "resizable": true,

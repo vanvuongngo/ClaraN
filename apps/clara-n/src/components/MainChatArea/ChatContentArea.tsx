@@ -1,7 +1,6 @@
 import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import { listen } from "@tauri-apps/api/event";
 import { MarkdownRenderer } from "~/integrations/react/MarkdownRenderer/MarkdownRenderer";
-import { SCROLL_TIMEOUT } from "./consts/scrolling";
 import { QuestionRenderer } from "./QuestionRenderer";
 import { ChatAnswer, ChatEvent, ChatStore } from "./types";
 
@@ -22,7 +21,7 @@ export const ChatContentArea = component$(() => {
     listen<ChatAnswer>("ollama_chunked", ({ payload /*, id*/ }: ChatEvent) => {
       store.chats[store.chats.length - 1][1] += payload.chunk;
 
-      const id = setTimeout(scrollFunction, SCROLL_TIMEOUT);
+      const id = setTimeout(scrollFunction, 200);
       cleanup(() => clearTimeout(id));
     });
   });

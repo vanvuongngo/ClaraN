@@ -107,21 +107,6 @@ pnpm dev:android
 pnpm dev:ios
 ```
 
-## Internationalization
-
-ClaraN supports internationalization for multiple languages: english, deutsch
-
-usage:
-```js
-{$localize`What's New`}
-```
-
-When you are done with your code changes, you can use the `i18n-extract` command to extract the translations from the code. This will update the [message.en.json](apps/clara-n/src/locales/message.en.json) file.
-
-```sh
-pnpm i18n-extract
-```
-
 ## 📸 **Visual Showcase**
 
 <details>
