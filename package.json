@@ -17,10 +17,17 @@
     "dev:android": "pnpm --filter clara-n tauri android dev",
     "dev:ios": "pnpm --filter clara-n tauri ios dev",
     "dev:web": "pnpm --filter clara-n dev",
+    "i18n-extract": "pnpm --filter clara-n i18n-extract",
+    "i18n-translate": "pnpm --filter clara-n i18n-translate",
     "lint": "pnpm --filter clara-n lint",
     "retag": "git tag -d ${VERSION} && git push origin :${VERSION} && git tag ${VERSION} && git push origin ${VERSION}"
   },
+  "dependencies": {
+    "@angular/localize": "^18.2.13"
+  },
   "devDependencies": {
+    "@angular/compiler": "^18.2.13",
+    "@angular/compiler-cli": "^18.2.13",
     "@builder.io/qwik": "^1.16.0",
     "@builder.io/qwik-city": "^1.16.0",
     "@builder.io/qwik-react": "^0.5.6",

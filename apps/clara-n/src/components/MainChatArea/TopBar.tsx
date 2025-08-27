@@ -20,7 +20,7 @@ export const TopBar = component$<NavBarProps>(({ title }) => {
       <div class="navbar-start">
         {/* <button class="btn btn-ghost">
           <LuHome />
-          <span class="hidden lg:inline">Back to Home</span>
+          <span class="hidden lg:inline">{$localize`Back to Home`}</span>
         </button> */}
       </div>
 
@@ -28,10 +28,10 @@ export const TopBar = component$<NavBarProps>(({ title }) => {
 
       <div class="navbar-end">
         {/* <button class="btn btn-ghost text-sm">
-          <LuDatabase /> <span class="hidden lg:flex">Knowledge Base</span>
+          <LuDatabase /> <span class="hidden lg:flex">{$localize`Knowledge Base`}</span>
         </button> */}
         {/* <button class="btn btn-ghost text-sm">
-          <LuWrench /> <span class="hidden lg:flex">Tools</span>
+          <LuWrench /> <span class="hidden lg:flex">{$localize`Tools`}</span>
         </button> */}
         {/* <button class="btn btn-ghost btn-circle text-sm">
           <LuMonitor />
