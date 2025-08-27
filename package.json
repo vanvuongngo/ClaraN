@@ -18,7 +18,6 @@
     "dev:ios": "pnpm --filter clara-n tauri ios dev",
     "dev:web": "pnpm --filter clara-n dev",
     "i18n-extract": "pnpm --filter clara-n i18n-extract",
-    "i18n-translate": "pnpm --filter clara-n i18n-translate",
     "lint": "pnpm --filter clara-n lint",
     "retag": "git tag -d ${VERSION} && git push origin :${VERSION} && git tag ${VERSION} && git push origin ${VERSION}"
   },
