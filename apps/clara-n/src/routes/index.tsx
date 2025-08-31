@@ -24,7 +24,7 @@ export default component$(() => {
         window.location.reload();
       } catch (err) {
         //TODO show message/ toast
-        error(`Failed to navigate to anorhwe language: ${err}`);
+        error(`Failed to navigate to another language: ${err}`);
       }
     }
   });

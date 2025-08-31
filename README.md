@@ -122,6 +122,23 @@ When you are done with your code changes, you can use the `i18n-extract` command
 pnpm i18n-extract
 ```
 
+<details>
+<summary>🔥 Click to see Add new language</summary>
+
+#### Add new supported locale
+
+Open `apps/clara-n/src/locales/consts/locale.ts`
+
+```js
+const SUPPORTED_LOCALES = ["en", "de"];
+```
+
+Create a new message.<LANG>.json file in `apps/clara-n/src/locales`
+
+Integrate new message file in `apps/clara-n/src/routes/i18n-utils.ts`
+
+</details>
+
 ## 📸 **Visual Showcase**
 
 <details>
