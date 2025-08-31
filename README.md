@@ -123,7 +123,7 @@ pnpm i18n-extract
 ```
 
 <details>
-<summary>🔥 Click to see Add new language</summary>
+<summary>🌐 Click to see how to add new language</summary>
 
 #### Add new supported locale
 
