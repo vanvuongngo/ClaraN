@@ -352,7 +352,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.claran;
 				PRODUCT_NAME = "ClaraN";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +387,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.claran;
 				PRODUCT_NAME = "ClaraN";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

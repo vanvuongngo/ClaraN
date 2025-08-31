@@ -1,6 +1,6 @@
 name: ClaraN
 options:
-  bundleIdPrefix: ch.devn.dev
+  bundleIdPrefix: ch.devn.claran
   deploymentTarget:
     iOS: 17.0
 fileGroups: [../../src]
@@ -11,7 +11,7 @@ settingGroups:
   app:
     base:
       PRODUCT_NAME: ClaraN
-      PRODUCT_BUNDLE_IDENTIFIER: ch.devn.dev
+      PRODUCT_BUNDLE_IDENTIFIER: ch.devn.claran
 targetTemplates:
   app:
     type: application
