@@ -1,4 +1,4 @@
-# Qwik City App ⚡️
+# ClaraN - Qwik City App
 
 - [Qwik Docs](https://qwik.dev/)
 - [Discord](https://qwik.dev/chat)
@@ -17,6 +17,7 @@ Inside your project, you'll see the following directory structure:
 ```
 ├── public/
 │   └── ...
+└── src-tauri/
 └── src/
     ├── components/
     │   └── ...
@@ -29,6 +30,8 @@ Inside your project, you'll see the following directory structure:
 - `src/components`: Recommended directory for components.
 
 - `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+
+- `src-tauri`: This is the tauri project of ClaraN to create hybrid apps with web technologies and a secure Rust backend.
 
 ## Add Integrations and deployment
 

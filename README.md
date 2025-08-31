@@ -107,6 +107,38 @@ pnpm dev:android
 pnpm dev:ios
 ```
 
+## Internationalization
+
+ClaraN supports internationalization for multiple languages: english, deutsch
+
+usage:
+```js
+{$localize`What is New`}
+```
+
+When you are done with your code changes, you can use the `i18n-extract` command to extract the translations from the code. This will update the [message.en.json](apps/clara-n/src/locales/message.en.json) file.
+
+```sh
+pnpm i18n-extract
+```
+
+<details>
+<summary>🌐 Click to see how to add new language</summary>
+
+#### Add new supported locale
+
+Open `apps/clara-n/src/locales/consts/locale.ts`
+
+```js
+const SUPPORTED_LOCALES = ["en", "de"];
+```
+
+Create a new message.<LANG>.json file in `apps/clara-n/src/locales`
+
+Integrate new message file in `apps/clara-n/src/routes/i18n-utils.ts`
+
+</details>
+
 ## 📸 **Visual Showcase**
 
 <details>
@@ -186,6 +218,14 @@ pnpm dev:ios
 | 📱 **Mobile App** | ✅ Tauri - Android [iOS] | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 | 🖥️ **Desktop App** | ✅ Tauri - MacOS Linux Windows | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 
+## Features
+
+- Simple deployment for all mobile and desktop apps
+- Get new features easily with the App updater on desktop
+- Internationalization depends on the OS locale (EN/ DE)
+- Small bundle size and installation with [Tauri](https://tauri.app/)
+- Better developer experience with [Qwik](https://qwik.dev/) and [DaisyUI](http://daisyui.com/) (self-opinionated)
+- Secure by using uptodated system native webview
 
 ## 🗓️ Release Timeline & Roadmap
 

@@ -2,7 +2,7 @@
   "$schema": "../../../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "ClaraN",
   "version": "0.2.5",
-  "identifier": "ch.devn.dev",
+  "identifier": "ch.devn.claran",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "ClaraN - AI Assistent",
+        "title": "ClaraN - AI",
         "width": 1024,
         "height": 800,
         "resizable": true,

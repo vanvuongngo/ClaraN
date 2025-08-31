@@ -1,37 +1,33 @@
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { useLocalStorage } from "qwik-localstorage";
+import { useLocation, useNavigate } from "@builder.io/qwik-city";
+import { error, warn } from "@tauri-apps/plugin-log";
+import { locale } from "@tauri-apps/plugin-os";
 import { ClaraAssistant } from "~/components/ClaraAssistant";
+import { DEFAULT_LOCALE } from "~/locales/consts/locale";
 
-// from https://github.com/badboysm890/ClaraVerse/blob/main/src/App.tsx
 export default component$(() => {
-  console.debug("ClaraN is a hardfork of the awesome ClaraVerse.");
-  console.debug("Why you'll want to use ClaraN?");
-  console.debug(
-    "Because of the tech stack which is based on modern and lightweight technologies:",
-  );
-  console.debug("Tauri, Rust, Qwik, NodeJS LTS, DaisyUI.");
-
-  const { data: activePage, set: setActivePage } = useLocalStorage<string>(
-    "page",
-    "dashboard",
-  );
+  const { url } = useLocation();
+  const navigate = useNavigate();
 
   // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
-    console.debug("activePage", activePage.value);
+  useVisibleTask$(async () => {
+    const osLocale = await locale();
+    if (!osLocale) {
+      return await warn(
+        "OS plugin: locale() does not return a value. So it is not possible to switch to a prefered language.",
+      );
+    }
+
+    if (osLocale !== DEFAULT_LOCALE) {
+      try {
+        await navigate(`${url}${osLocale}/`);
+        window.location.reload();
+      } catch (err) {
+        //TODO show message/ toast
+        error(`Failed to navigate to another language: ${err}`);
+      }
+    }
   });
 
-  return <ClaraAssistant onPageChange={setActivePage} />;
+  return <ClaraAssistant />;
 });
-
-export const head: DocumentHead = {
-  title: "ClaraN - AI Assistant",
-  meta: [
-    {
-      name: "description",
-      content:
-        "ClaraN is a hardfork of the awesome Clara with modern tech stack and mobile first",
-    },
-  ],
-};

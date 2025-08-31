@@ -16,6 +16,8 @@
           "url": "https://github.com/vanvuongngo/ClaraN/releases/latest"
         }
       ]
-    }
+    },
+    "log:default",
+    "os:default"
   ]
 }

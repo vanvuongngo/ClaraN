@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-a */
 import {
   $,
   component$,
@@ -87,7 +88,7 @@ export const Options = component$(() => {
               >
                 {!updateProgressMeta.contentLength ? (
                   <>
-                    <span class="hidden @min-[135px]:block">Update</span>
+                    <span class="hidden @min-[135px]:block">{$localize`Update`}</span>
                     <span> {appVersionMeta.version}</span>
                   </>
                 ) : (
@@ -101,38 +102,41 @@ export const Options = component$(() => {
             </li>
           )}
           {/* <li>
-            <a href="#">
-              <LuStar /> <span class="hidden @min-[135px]:block">Starred</span>
+            <a>
+              <LuStar /> <span class="hidden @min-[135px]:block">{$localize`Starred`}</span>
             </a>
           </li> */}
           {/* <li>
-            <a href="#">
+            <a>
               <LuArchive />{" "}
-              <span class="hidden @min-[135px]:block">Archived</span>
+              <span class="hidden @min-[135px]:block">{$localize`Archived`}</span>
             </a>
           </li> */}
           {/* <li>
-            <a href="#">
-              <LuTrash2 /> <span class="hidden @min-[135px]:block">Trash</span>
+            <a>
+              <LuTrash2 /> <span class="hidden @min-[135px]:block">{$localize`Trash`}</span>
             </a>
           </li> */}
           <li>
             <a
-              href="#"
               onClick$={async () => {
                 await openUrl(
                   "https://github.com/vanvuongngo/ClaraN/releases/latest",
                 );
               }}
+              title={$localize`Open the description of the latest version on github...`}
+              class="w-42"
             >
               <LuSparkles />{" "}
-              <span class="hidden @min-[135px]:block">What's New</span>
+              <span class="hidden @min-[135px]:block">
+                {$localize`What is New`}
+              </span>
             </a>
           </li>
           {/* <li>
-            <a href="#">
+            <a>
               <LuSettings />{" "}
-              <span class="hidden @min-[135px]:block">Settings</span>
+              <span class="hidden @min-[135px]:block">{$localize`Settings`}</span>
             </a>
           </li> */}
         </ul>

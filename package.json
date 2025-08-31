@@ -17,10 +17,16 @@
     "dev:android": "pnpm --filter clara-n tauri android dev",
     "dev:ios": "pnpm --filter clara-n tauri ios dev",
     "dev:web": "pnpm --filter clara-n dev",
+    "i18n-extract": "pnpm --filter clara-n i18n-extract",
     "lint": "pnpm --filter clara-n lint",
     "retag": "git tag -d ${VERSION} && git push origin :${VERSION} && git tag ${VERSION} && git push origin ${VERSION}"
   },
+  "dependencies": {
+    "@angular/localize": "^20.2.3"
+  },
   "devDependencies": {
+    "@angular/compiler": "^20.2.3",
+    "@angular/compiler-cli": "^20.2.3",
     "@builder.io/qwik": "^1.16.0",
     "@builder.io/qwik-city": "^1.16.0",
     "@builder.io/qwik-react": "^0.5.6",
@@ -31,12 +37,15 @@
     "@tauri-apps/api": "^2.8.0",
     "@tauri-apps/cli": "^2.8.3",
     "@tauri-apps/plugin-clipboard-manager": "~2.3.0",
+    "@tauri-apps/plugin-log": "^2.6.0",
     "@tauri-apps/plugin-opener": "^2.5.0",
+    "@tauri-apps/plugin-os": "^2.3.1",
+    "@tauri-apps/plugin-store": "^2.4.0",
     "@tauri-apps/plugin-updater": "^2.9.0",
     "@types/node": "^22.18.0",
     "@types/react": "^18.3.24",
     "@types/react-dom": "^18.3.7",
-    "daisyui": "^5.0.50",
+    "daisyui": "^5.0.54",
     "eslint": "^9.34.0",
     "eslint-plugin-qwik": "^1.16.0",
     "globals": "^16.3.0",
