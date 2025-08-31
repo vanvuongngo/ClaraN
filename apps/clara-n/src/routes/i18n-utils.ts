@@ -4,11 +4,9 @@ import { $, getLocale, useOnDocument, withLocale } from "@builder.io/qwik";
 import type { RenderOptions } from "@builder.io/qwik/server";
 
 // You must declare all your locales here
-import DE from "../../locales/message.de.json";
-import EN from "../../locales/message.en.json";
-
-// Make sure it's obvious when the default locale was selected
-const DEFAULT_LOCALE = "en";
+import { DEFAULT_LOCALE } from "../locales/consts/locale";
+import DE from "../locales/message.de.json";
+import EN from "../locales/message.en.json";
 
 /**
  * This file is left for the developer to customize to get the behavior they want for localization.

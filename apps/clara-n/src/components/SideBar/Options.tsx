@@ -125,10 +125,11 @@ export const Options = component$(() => {
                 );
               }}
               title={$localize`Open the description of the latest version on github...`}
+              class="w-42"
             >
               <LuSparkles />{" "}
               <span class="hidden @min-[135px]:block">
-                {$localize`What's New`}
+                {$localize`What is New`}
               </span>
             </a>
           </li>

@@ -20,11 +20,19 @@ use tauri::Manager;
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_clipboard_manager::init())
         .plugin(tauri_plugin_opener::init()) // https://v2.tauri.app/plugin/opener/
         .setup(|app| {
             // log plugin https://v2.tauri.app/plugin/logging/
             if cfg!(debug_assertions) {
+                // only include this code on debug builds
+                app.handle().plugin(
+                    tauri_plugin_log::Builder::default()
+                        .level(log::LevelFilter::Debug) // https://v2.tauri.app/plugin/logging/#maximum-log-level
+                        .build(),
+                )?;
+            } else {
                 app.handle().plugin(
                     tauri_plugin_log::Builder::default()
                         .level(log::LevelFilter::Info) // https://v2.tauri.app/plugin/logging/#maximum-log-level

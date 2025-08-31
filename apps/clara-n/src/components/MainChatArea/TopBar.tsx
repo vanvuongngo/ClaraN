@@ -7,6 +7,7 @@ import {
   LuSettings,
   LuUser,
 } from "@qwikest/icons/lucide";
+import LocaleSelect from "./LocaleSelect";
 export interface NavBarProps {
   title?: string;
 }
@@ -27,6 +28,7 @@ export const TopBar = component$<NavBarProps>(({ title }) => {
       <div class="navbar-center hidden lg:flex">{centerLgText}</div>
 
       <div class="navbar-end">
+        <LocaleSelect />
         {/* <button class="btn btn-ghost text-sm">
           <LuDatabase /> <span class="hidden lg:flex">{$localize`Knowledge Base`}</span>
         </button> */}
@@ -36,7 +38,6 @@ export const TopBar = component$<NavBarProps>(({ title }) => {
         {/* <button class="btn btn-ghost btn-circle text-sm">
           <LuMonitor />
         </button> */}
-
         {showProfile && (
           <div class="dropdown dropdown-end">
             <div

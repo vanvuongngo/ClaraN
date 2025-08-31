@@ -29,7 +29,7 @@ pub async fn check_update(
     pending_update_state: State<'_, PendingUpdate>,
     on_event: Channel<CheckUpdateEvent<'_>>,
 ) -> Result<(), tauri_plugin_updater::Error> {
-    log::debug!("invoked: check_update");
+    log::debug!("check_update");
 
     let updater = app
         .updater_builder()
