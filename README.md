@@ -113,7 +113,7 @@ ClaraN supports internationalization for multiple languages: english, deutsch
 
 usage:
 ```js
-{$localize`What's New`}
+{$localize`What is New`}
 ```
 
 When you are done with your code changes, you can use the `i18n-extract` command to extract the translations from the code. This will update the [message.en.json](apps/clara-n/src/locales/message.en.json) file.
@@ -201,6 +201,14 @@ pnpm i18n-extract
 | 📱 **Mobile App** | ✅ Tauri - Android [iOS] | ❌ in progress | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 | 🖥️ **Desktop App** | ✅ Tauri - MacOS Linux Windows | ✅ Electron | ❌ Web Only | ❌ Web Only | ❌ Web Only |
 
+## Features
+
+- Simple deployment for all mobile and desktop apps
+- Get new features easily with the App updater on desktop
+- Internationalization depends on the OS locale (EN/ DE)
+- Small bundle size and installation
+- Better developer experience with Qwik and DaisyUI (self-opinionated)
+- Secure by using uptodated system native webview
 
 ## 🗓️ Release Timeline & Roadmap
 
