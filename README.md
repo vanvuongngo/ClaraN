@@ -206,8 +206,8 @@ pnpm i18n-extract
 - Simple deployment for all mobile and desktop apps
 - Get new features easily with the App updater on desktop
 - Internationalization depends on the OS locale (EN/ DE)
-- Small bundle size and installation
-- Better developer experience with Qwik and DaisyUI (self-opinionated)
+- Small bundle size and installation with [Tauri](https://tauri.app/)
+- Better developer experience with [Qwik](https://qwik.dev/) and [DaisyUI](http://daisyui.com/) (self-opinionated)
 - Secure by using uptodated system native webview
 
 ## 🗓️ Release Timeline & Roadmap
