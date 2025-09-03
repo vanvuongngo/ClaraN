@@ -19,7 +19,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "i18n-extract": "localize-extract -s \"dist/build/*.js\" -f json -o src/locales/message.en.json",
-    "i18n-translate": "localize-translate -s \"*.js\" -t src/locales/message.*.json -o dist/build/{{LOCALE}} -r ./dist/build",
+    "i18n-translate": "localize-translate -s \"*.js\" -t src/locales/message.en.json -t src/locales/message.de.json -o dist/build/{{LOCALE}} -r ./dist/build",
     "lint": "eslint \"src/**/*.ts*\"",
     "postlint": "cd src-tauri && cargo fmt",
     "prei18n-extract": "vite build",
