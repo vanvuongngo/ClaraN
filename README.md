@@ -4,7 +4,7 @@
 
 ClaraN isn't just another chat UI. It's a complete AI ecosystem that runs 100% on your machines.
 
-This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVerse
+This is a hardfork of the awesome project https://github.com/badboysm890/ClaraVerse built from scratch.
 
 ## Tech Stack
 
