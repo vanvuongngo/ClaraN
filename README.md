@@ -111,7 +111,12 @@ pnpm dev:ios
 
 ClaraN supports internationalization for multiple languages: english, deutsch
 
-usage:
+
+<details>
+<summary>🌐 Click to see how to use locales</summary>
+
+#### Use with i18n:
+
 ```js
 {$localize`What is New`}
 ```
@@ -122,12 +127,9 @@ When you are done with your code changes, you can use the `i18n-extract` command
 pnpm i18n-extract
 ```
 
-<details>
-<summary>🌐 Click to see how to add new language</summary>
-
 #### Add new supported locale
 
-Open `apps/clara-n/src/locales/consts/locale.ts`
+Open `apps/clara-n/src/locales/consts/locale.ts` and append a new locale:
 
 ```js
 const SUPPORTED_LOCALES = ["en", "de"];

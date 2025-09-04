@@ -91,3 +91,9 @@ export function useI18n() {
 if (import.meta.env.SSR) {
   initTranslations();
 }
+
+export function transfromOS(osLocale: string) {
+  if (osLocale === 'de') return 'de-DE';
+
+  return osLocale;
+}
