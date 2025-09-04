@@ -1,9 +1,10 @@
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
-import { error, warn } from "@tauri-apps/plugin-log";
+import { debug, error, warn } from "@tauri-apps/plugin-log";
 import { locale } from "@tauri-apps/plugin-os";
 import { ClaraAssistant } from "~/components/ClaraAssistant";
 import { DEFAULT_LOCALE } from "~/locales/consts/locale";
+import { transfromOS } from "./i18n-utils";
 
 export default component$(() => {
   const { url } = useLocation();
@@ -20,7 +21,9 @@ export default component$(() => {
 
     if (osLocale !== DEFAULT_LOCALE) {
       try {
-        await navigate(`${url}${osLocale}/`);
+        const redirectUrl = `${url}${transfromOS(osLocale)}/`;
+        await debug(`redirect to locale: ${redirectUrl}`);
+        await navigate(redirectUrl);
         window.location.reload();
       } catch (err) {
         //TODO show message/ toast

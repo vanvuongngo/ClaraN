@@ -22,11 +22,11 @@
     "retag": "git tag -d ${VERSION} && git push origin :${VERSION} && git tag ${VERSION} && git push origin ${VERSION}"
   },
   "dependencies": {
-    "@angular/localize": "^20.2.3"
+    "@angular/localize": "^20.2.4"
   },
   "devDependencies": {
-    "@angular/compiler": "^20.2.3",
-    "@angular/compiler-cli": "^20.2.3",
+    "@angular/compiler": "^20.2.4",
+    "@angular/compiler-cli": "^20.2.4",
     "@builder.io/qwik": "^1.16.0",
     "@builder.io/qwik-city": "^1.16.0",
     "@builder.io/qwik-react": "^0.5.6",
