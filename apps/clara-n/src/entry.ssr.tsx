@@ -14,6 +14,7 @@ import {
   renderToStream,
   type RenderToStreamOptions,
 } from "@builder.io/qwik/server";
+import { DEFAULT_LOCALE } from "./locales/consts/locale";
 import Root from "./root";
 import { extractBase } from "./routes/i18n-utils";
 
@@ -23,7 +24,7 @@ export default function (opts: RenderToStreamOptions) {
     base: extractBase, // determine the base URL for the client code
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
-      lang: opts.serverData?.locale ?? "en",
+      lang: opts.serverData?.locale ?? DEFAULT_LOCALE,
       ...opts.containerAttributes,
     },
   });
