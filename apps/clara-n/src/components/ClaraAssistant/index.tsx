@@ -13,7 +13,7 @@ export const ClaraAssistant = component$(() => {
         id="drawerContent"
         class="drawer-content flex flex-col overflow-y-auto"
       >
-        <div class="navbar bg-base-300 w-full lg:hidden">
+        <div class="navbar bg-base-300 w-full pt-5 lg:hidden">
           {/* icon for mobile when popup is closed */}
           <label for="sidebar-toggle" class="btn btn-ghost btn-square">
             <LuMenu />
@@ -22,7 +22,7 @@ export const ClaraAssistant = component$(() => {
           <span class="ml-2 font-bold">ClaraN</span>
         </div>
 
-        <main class="bg-base-200 flex flex-1 flex-col">
+        <main class="bg-base-200 flex flex-1 flex-col pb-12 md:pb-0">
           <MainChatArea />
         </main>
       </div>

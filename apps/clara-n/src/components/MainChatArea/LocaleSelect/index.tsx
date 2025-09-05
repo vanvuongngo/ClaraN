@@ -4,11 +4,13 @@ import { component$ } from "@builder.io/qwik";
 export const LocaleSelect = component$(() => {
   return (
     <>
-      <a href="/en" title="/en">
+      <a class="btn btn-ghost px-1" href="/en" title="english">
         EN
       </a>
       {"|"}
-      <a href="/de">DE</a>
+      <a class="btn btn-ghost px-1" href="/de" title="deutsch">
+        DE
+      </a>
     </>
   );
 });
