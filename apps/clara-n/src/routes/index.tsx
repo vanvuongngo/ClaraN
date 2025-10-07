@@ -19,9 +19,10 @@ export default component$(() => {
       );
     }
 
-    if (osLocale !== DEFAULT_LOCALE) {
+    const maybeRedirectTo = transfromOS(osLocale);;
+    if (maybeRedirectTo !== DEFAULT_LOCALE) {
       try {
-        const redirectUrl = `${url}${transfromOS(osLocale)}/`;
+        const redirectUrl = `${url}${maybeRedirectTo}/`;
         await debug(`redirect to locale: ${redirectUrl}`);
         await navigate(redirectUrl);
         window.location.reload();

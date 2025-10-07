@@ -4,7 +4,7 @@ import { $, getLocale, useOnDocument, withLocale } from "@builder.io/qwik";
 import type { RenderOptions } from "@builder.io/qwik/server";
 
 // You must declare all your locales here
-import { DEFAULT_LOCALE } from "../locales/consts/locale";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "../locales/consts/locale";
 import DE from "../locales/message.de.json";
 import EN from "../locales/message.en.json";
 
@@ -93,8 +93,12 @@ if (import.meta.env.SSR) {
 }
 
 export function transfromOS(osLocale: string) {
-  if (osLocale === 'de') return 'de-DE';
+  // for desktop it's `de` and fallback for other german l18n that are not supported (yet)
+  if (osLocale.startsWith('de')) return 'de-DE';
+
+  // for mobile or l18n with locale like `fr-XX` when it is a supported locales
+  if (SUPPORTED_LOCALES.includes(osLocale)) return osLocale;
 
   // fallback
-  return 'en';
+  return DEFAULT_LOCALE;
 }
