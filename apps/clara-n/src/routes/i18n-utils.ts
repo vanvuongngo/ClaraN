@@ -95,5 +95,6 @@ if (import.meta.env.SSR) {
 export function transfromOS(osLocale: string) {
   if (osLocale === 'de') return 'de-DE';
 
-  return osLocale;
+  // fallback
+  return 'en';
 }
