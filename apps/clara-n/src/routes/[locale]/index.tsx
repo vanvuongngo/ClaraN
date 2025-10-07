@@ -4,12 +4,12 @@ import {
   type StaticGenerateHandler,
 } from "@builder.io/qwik-city";
 import { ClaraAssistant } from "~/components/ClaraAssistant";
-import { config } from "../../locales/consts/locale";
+import { SUPPORTED_LOCALES } from "../../locales/consts/locale";
 
 // https://robisim74.gitbook.io/qwik-speak/library/adapters#static-site-generation-ssg
 // https://qwik.dev/docs/guides/static-site-generation/#dynamic-ssg-routes
 export const onStaticGenerate: StaticGenerateHandler = () => ({
-  params: config.supportedLocales.map((locale) => locale),
+  params: SUPPORTED_LOCALES.map(locale => ({ locale })),
 });
 
 export default component$(() => {
