@@ -52,8 +52,8 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-        CFBundleShortVersionString: 0.1.1
-        CFBundleVersion: 0.1.1
+        CFBundleShortVersionString: 0.2.5
+        CFBundleVersion: "0.2.5"
     entitlements:
       path: ClaraN_iOS/ClaraN_iOS.entitlements
     scheme:

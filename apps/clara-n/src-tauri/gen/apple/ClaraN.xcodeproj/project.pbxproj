@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,25 +23,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010CFD5A29840DE7985660B0 /* pending_update.rs */ = {isa = PBXFileReference; path = pending_update.rs; sourceTree = "<group>"; };
 		14A3C4F3F3C029FD81DC8003 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		2FD661945C5E1DAEA6494818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3256DC9198247A04E9C7CE98 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		38F336AE5B82B9B24C4F8AE2 /* updater.rs */ = {isa = PBXFileReference; path = updater.rs; sourceTree = "<group>"; };
 		396701A3933A6D475F5E6A9A /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		405C84AD2271D346C1380692 /* ClaraN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClaraN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F29D4BE45D6FC0E6B6CDE94 /* ollama.rs */ = {isa = PBXFileReference; path = ollama.rs; sourceTree = "<group>"; };
+		405C84AD2271D346C1380692 /* ClaraN_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ClaraN_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		531D92ABF46A8C544F78F8EF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5912D3DB844E3465803BB826 /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		5912D3DB844E3465803BB826 /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
 		5DB483C78F8A6B13771DFFE4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
 		658703DF2C17C55F2D1E8C46 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		6A3A21EB549D89978258DCCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8006E4AE34E1B6E0E5824B29 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
 		8885D696EA7D0635F554B3DE /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		8A96B5970DE071FA5E842D11 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA88C736AF37E4AB3C2F0F67 /* checker.rs */ = {isa = PBXFileReference; path = checker.rs; sourceTree = "<group>"; };
+		ADF4803907002AB17B006FCC /* mod.rs */ = {isa = PBXFileReference; path = mod.rs; sourceTree = "<group>"; };
 		BBF4C7D709FAE81BAD3F4C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BD3C02AE708F9BC41346AEE9 /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
+		BD3C02AE708F9BC41346AEE9 /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
 		C1D6B808C5F655F57689E2B6 /* ClaraN_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClaraN_iOS.entitlements; sourceTree = "<group>"; };
 		C1E73FADE1D774BAEB19CDF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D4C943B23C8F84511AE7639F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E05CDDE1E27A8779C1DB77C0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E7E79B7BC6C906B4F9F96764 /* mod.rs */ = {isa = PBXFileReference; path = mod.rs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,7 @@
 		111F88F71040D04CF6ADA83D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				405C84AD2271D346C1380692 /* ClaraN.app */,
+				405C84AD2271D346C1380692 /* ClaraN_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,11 +111,22 @@
 			path = x86_64;
 			sourceTree = "<group>";
 		};
+		6CCB2A0D328CC830F1E9997C /* providers */ = {
+			isa = PBXGroup;
+			children = (
+				ADF4803907002AB17B006FCC /* mod.rs */,
+				3F29D4BE45D6FC0E6B6CDE94 /* ollama.rs */,
+			);
+			path = providers;
+			sourceTree = "<group>";
+		};
 		7585E57BC2F1CDC3F7741F7A /* src */ = {
 			isa = PBXGroup;
 			children = (
 				BD3C02AE708F9BC41346AEE9 /* lib.rs */,
 				5912D3DB844E3465803BB826 /* main.rs */,
+				86D296D64BE8EFFC39337CE5 /* app_updates */,
+				6CCB2A0D328CC830F1E9997C /* providers */,
 			);
 			name = src;
 			path = ../../src;
@@ -136,6 +153,17 @@
 				685D61F48A75FF378D628969 /* x86_64 */,
 			);
 			path = Externals;
+			sourceTree = "<group>";
+		};
+		86D296D64BE8EFFC39337CE5 /* app_updates */ = {
+			isa = PBXGroup;
+			children = (
+				AA88C736AF37E4AB3C2F0F67 /* checker.rs */,
+				E7E79B7BC6C906B4F9F96764 /* mod.rs */,
+				010CFD5A29840DE7985660B0 /* pending_update.rs */,
+				38F336AE5B82B9B24C4F8AE2 /* updater.rs */,
+			);
+			path = app_updates;
 			sourceTree = "<group>";
 		};
 		A537839514025606B3E884A0 = {
@@ -169,6 +197,13 @@
 			path = bindings;
 			sourceTree = "<group>";
 		};
+		"TEMP_0ECB5CA4-E96E-4A49-8B81-68F62D43D4E5" /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = arm64;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,7 +224,7 @@
 			packageProductDependencies = (
 			);
 			productName = ClaraN_iOS;
-			productReference = 405C84AD2271D346C1380692 /* ClaraN.app */;
+			productReference = 405C84AD2271D346C1380692 /* ClaraN_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,6 +246,7 @@
 			);
 			mainGroup = A537839514025606B3E884A0;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -329,11 +365,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ARCHS = x86_64;
+				ARCHS = (
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ClaraN_iOS/ClaraN_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 936644PDW9;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -345,13 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
-					"$(SDKROOT)/usr/lib/swift",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
-				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.claran;
 				PRODUCT_NAME = "ClaraN";
 				SDKROOT = iphoneos;
@@ -364,11 +395,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ARCHS = x86_64;
+				ARCHS = (
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ClaraN_iOS/ClaraN_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 936644PDW9;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -380,13 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
-					"$(SDKROOT)/usr/lib/swift",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
-				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.devn.claran;
 				PRODUCT_NAME = "ClaraN";
 				SDKROOT = iphoneos;
