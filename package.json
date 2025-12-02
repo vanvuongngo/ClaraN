@@ -25,7 +25,7 @@
     "@angular/localize": "^20.2.4"
   },
   "devDependencies": {
-    "@angular/compiler": "^20.2.4",
+    "@angular/compiler": "^20.3.15",
     "@angular/compiler-cli": "^20.2.4",
     "@builder.io/qwik": "^1.16.0",
     "@builder.io/qwik-city": "^1.16.0",
